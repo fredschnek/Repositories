@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7F45196A28D4A37E00EF437C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45196928D4A37E00EF437C /* AppDelegate.swift */; };
-		7F45196C28D4A37E00EF437C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45196B28D4A37E00EF437C /* SceneDelegate.swift */; };
 		7F45196E28D4A37E00EF437C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45196D28D4A37E00EF437C /* ViewController.swift */; };
 		7F45197128D4A37E00EF437C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F45196F28D4A37E00EF437C /* Main.storyboard */; };
 		7F45197328D4A37F00EF437C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F45197228D4A37F00EF437C /* Assets.xcassets */; };
 		7F45197628D4A37F00EF437C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F45197428D4A37F00EF437C /* LaunchScreen.storyboard */; };
 		7F45198128D4A37F00EF437C /* RepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45198028D4A37F00EF437C /* RepositoriesTests.swift */; };
-		7F45198B28D4A37F00EF437C /* RepositoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45198A28D4A37F00EF437C /* RepositoriesUITests.swift */; };
-		7F45198D28D4A37F00EF437C /* RepositoriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45198C28D4A37F00EF437C /* RepositoriesUITestsLaunchTests.swift */; };
+		7F45199A28D4AC9D00EF437C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45199928D4AC9D00EF437C /* User.swift */; };
+		7F45199C28D4ACBE00EF437C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45199B28D4ACBE00EF437C /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +37,6 @@
 /* Begin PBXFileReference section */
 		7F45196628D4A37E00EF437C /* Repositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Repositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F45196928D4A37E00EF437C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7F45196B28D4A37E00EF437C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7F45196D28D4A37E00EF437C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7F45197028D4A37E00EF437C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F45197228D4A37F00EF437C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,8 +45,8 @@
 		7F45197C28D4A37F00EF437C /* RepositoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepositoriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F45198028D4A37F00EF437C /* RepositoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTests.swift; sourceTree = "<group>"; };
 		7F45198628D4A37F00EF437C /* RepositoriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepositoriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F45198A28D4A37F00EF437C /* RepositoriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesUITests.swift; sourceTree = "<group>"; };
-		7F45198C28D4A37F00EF437C /* RepositoriesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7F45199928D4AC9D00EF437C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7F45199B28D4ACBE00EF437C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 			children = (
 				7F45196828D4A37E00EF437C /* Repositories */,
 				7F45197F28D4A37F00EF437C /* RepositoriesTests */,
-				7F45198928D4A37F00EF437C /* RepositoriesUITests */,
 				7F45196728D4A37E00EF437C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,12 +97,13 @@
 			isa = PBXGroup;
 			children = (
 				7F45196928D4A37E00EF437C /* AppDelegate.swift */,
-				7F45196B28D4A37E00EF437C /* SceneDelegate.swift */,
 				7F45196D28D4A37E00EF437C /* ViewController.swift */,
+				7F45197428D4A37F00EF437C /* LaunchScreen.storyboard */,
 				7F45196F28D4A37E00EF437C /* Main.storyboard */,
 				7F45197228D4A37F00EF437C /* Assets.xcassets */,
-				7F45197428D4A37F00EF437C /* LaunchScreen.storyboard */,
 				7F45197728D4A37F00EF437C /* Info.plist */,
+				7F45199928D4AC9D00EF437C /* User.swift */,
+				7F45199B28D4ACBE00EF437C /* Repository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -116,15 +114,6 @@
 				7F45198028D4A37F00EF437C /* RepositoriesTests.swift */,
 			);
 			path = RepositoriesTests;
-			sourceTree = "<group>";
-		};
-		7F45198928D4A37F00EF437C /* RepositoriesUITests */ = {
-			isa = PBXGroup;
-			children = (
-				7F45198A28D4A37F00EF437C /* RepositoriesUITests.swift */,
-				7F45198C28D4A37F00EF437C /* RepositoriesUITestsLaunchTests.swift */,
-			);
-			path = RepositoriesUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +249,8 @@
 			files = (
 				7F45196E28D4A37E00EF437C /* ViewController.swift in Sources */,
 				7F45196A28D4A37E00EF437C /* AppDelegate.swift in Sources */,
-				7F45196C28D4A37E00EF437C /* SceneDelegate.swift in Sources */,
+				7F45199A28D4AC9D00EF437C /* User.swift in Sources */,
+				7F45199C28D4ACBE00EF437C /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +266,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F45198D28D4A37F00EF437C /* RepositoriesUITestsLaunchTests.swift in Sources */,
-				7F45198B28D4A37F00EF437C /* RepositoriesUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
