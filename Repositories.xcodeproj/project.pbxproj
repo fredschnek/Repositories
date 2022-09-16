@@ -15,6 +15,8 @@
 		7F45198128D4A37F00EF437C /* RepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45198028D4A37F00EF437C /* RepositoriesTests.swift */; };
 		7F45199A28D4AC9D00EF437C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45199928D4AC9D00EF437C /* User.swift */; };
 		7F45199C28D4ACBE00EF437C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45199B28D4ACBE00EF437C /* Repository.swift */; };
+		7F45199E28D4AE5E00EF437C /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45199D28D4AE5E00EF437C /* Decoding.swift */; };
+		7F4519A028D4AE7300EF437C /* ModelTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45199F28D4AE7300EF437C /* ModelTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		7F45198628D4A37F00EF437C /* RepositoriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepositoriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F45199928D4AC9D00EF437C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7F45199B28D4ACBE00EF437C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		7F45199D28D4AE5E00EF437C /* Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoding.swift; sourceTree = "<group>"; };
+		7F45199F28D4AE7300EF437C /* ModelTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				7F45197728D4A37F00EF437C /* Info.plist */,
 				7F45199928D4AC9D00EF437C /* User.swift */,
 				7F45199B28D4ACBE00EF437C /* Repository.swift */,
+				7F45199D28D4AE5E00EF437C /* Decoding.swift */,
+				7F45199F28D4AE7300EF437C /* ModelTypes.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -247,10 +253,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F45199E28D4AE5E00EF437C /* Decoding.swift in Sources */,
 				7F45196E28D4A37E00EF437C /* ViewController.swift in Sources */,
 				7F45196A28D4A37E00EF437C /* AppDelegate.swift in Sources */,
 				7F45199A28D4AC9D00EF437C /* User.swift in Sources */,
 				7F45199C28D4ACBE00EF437C /* Repository.swift in Sources */,
+				7F4519A028D4AE7300EF437C /* ModelTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
