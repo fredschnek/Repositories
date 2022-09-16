@@ -22,7 +22,7 @@ struct FetchableValue<T> {
     let url: URL
     var value: RemoteValue<T>
     
-    enum RemoteValue<T> {
+    indirect enum RemoteValue<T> {
         case notFetched
         case fetched(value: T)
     }
