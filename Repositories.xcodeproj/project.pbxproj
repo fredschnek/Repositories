@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F126C7928D6370C00FF8302 /* CachingPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F126C7828D6370C00FF8302 /* CachingPolicyTests.swift */; };
+		7F126C7B28D6388100FF8302 /* FileSystemCacheControllerGitHubDirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F126C7A28D6388100FF8302 /* FileSystemCacheControllerGitHubDirectoryTests.swift */; };
 		7F45196A28D4A37E00EF437C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45196928D4A37E00EF437C /* AppDelegate.swift */; };
 		7F45196E28D4A37E00EF437C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45196D28D4A37E00EF437C /* ViewController.swift */; };
 		7F45197128D4A37E00EF437C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F45196F28D4A37E00EF437C /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F126C7828D6370C00FF8302 /* CachingPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingPolicyTests.swift; sourceTree = "<group>"; };
+		7F126C7A28D6388100FF8302 /* FileSystemCacheControllerGitHubDirectoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemCacheControllerGitHubDirectoryTests.swift; sourceTree = "<group>"; };
 		7F45196628D4A37E00EF437C /* Repositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Repositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F45196928D4A37E00EF437C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F45196D28D4A37E00EF437C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				7F9AB99728D4B4C2002EE4A8 /* Model Types */,
+				7F126C7828D6370C00FF8302 /* CachingPolicyTests.swift */,
+				7F126C7A28D6388100FF8302 /* FileSystemCacheControllerGitHubDirectoryTests.swift */,
 				7F4519A928D4B04500EF437C /* Helpers.swift */,
 				7F4519AB28D4B0BD00EF437C /* User.json */,
 				7F4519AD28D4B0E600EF437C /* PartialUser.json */,
@@ -326,8 +332,10 @@
 				7F4519A628D4B00E00EF437C /* UserTests.swift in Sources */,
 				7F4519A228D4AFD600EF437C /* FetchableValueTests.swift in Sources */,
 				7F4519A428D4AFEB00EF437C /* URLTests.swift in Sources */,
+				7F126C7B28D6388100FF8302 /* FileSystemCacheControllerGitHubDirectoryTests.swift in Sources */,
 				7F4519AA28D4B04500EF437C /* Helpers.swift in Sources */,
 				7F4519A828D4B02A00EF437C /* RepositoryTests.swift in Sources */,
+				7F126C7928D6370C00FF8302 /* CachingPolicyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
