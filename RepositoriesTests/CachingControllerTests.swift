@@ -1,6 +1,6 @@
 //
-//  CachingPolicyTests.swift
-//  RepositoriesTests
+//  CachingControllerTests.swift
+//  Repositories
 //
 //  Created by Frederico Schnekenberg on 17/09/22.
 //

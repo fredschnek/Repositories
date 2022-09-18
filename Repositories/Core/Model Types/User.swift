@@ -5,8 +5,8 @@
 //  Created by Frederico Schnekenberg on 16/09/22.
 //
 
-import UIKit
 import Foundation
+import UIKit
 
 struct User {
     let login: String
@@ -20,7 +20,7 @@ struct User {
     var details: FetchableValue<Details>
 }
 
-// MARK: - Decodable
+// MARK: Decodable
 
 extension User: Decodable {
     enum CodingKeys: String, CodingKey {
@@ -85,5 +85,20 @@ extension User.Details {
         case followersCount = "followers"
         case followingCount = "following"
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        publicRepositoriesCount = try container.value(forKey: .publicRepositoriesCount)
+        followersCount = try container.value(forKey: .followersCount)
+        followingCount = try container.value(forKey: .followingCount)
+        name = try container.value(forKey: .name)
+        company = try container.value(forKey: .company)
+        location = try container.value(forKey: .location)
+        email = try container.value(forKey: .email)
+        bio = try container.value(forKey: .bio)
+        let blog: String = try container.value(forKey: .blog)
+        self.blog = blog.isEmpty ? nil : URL(string: blog)
+    }
+    
 }
 
