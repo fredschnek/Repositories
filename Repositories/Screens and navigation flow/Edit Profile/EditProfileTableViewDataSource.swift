@@ -32,6 +32,7 @@ class EditProfileTableViewDataSource: NSObject {
 }
 
 // MARK: UITableViewDataSource
+
 extension EditProfileTableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return organizer.rowsCount
@@ -49,6 +50,7 @@ extension EditProfileTableViewDataSource: UITableViewDataSource {
 }
 
 // MARK: - DataOrganizer
+
 extension EditProfileTableViewDataSource {
     struct DataOrganizer {
         private(set) var rows: [EditProfileViewController.Row]
@@ -105,13 +107,16 @@ extension EditProfileTableViewDataSource {
 }
 
 // MARK: RowConfigurable
+
 protocol RowConfigurable {
     func configure(with row: EditProfileViewController.Row)
 }
 
 extension AvatarInputCell: RowConfigurable {
     func configure(with row: EditProfileViewController.Row) {
-        avatar = #imageLiteral(resourceName: "avatar")
+        if case let .avatar(image) = row {
+            avatar = image
+        }
     }
 }
 
@@ -144,6 +149,7 @@ extension BioInputCell: RowConfigurable {
 }
 
 // MARK: - String
+
 extension String {
     var isValidURL: Bool {
         return URL(string: self) != nil

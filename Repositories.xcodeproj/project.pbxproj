@@ -31,6 +31,11 @@
 		7F126CAD28D6C3A600FF8302 /* ArrayTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F126CA828D6C3A600FF8302 /* ArrayTableViewDataSourceTests.swift */; };
 		7F126CAF28D6C54800FF8302 /* Users.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F126CAE28D6C54800FF8302 /* Users.json */; };
 		7F126CB128D6C55700FF8302 /* Repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F126CB028D6C55700FF8302 /* Repositories.json */; };
+		7F32E7A628D9DD78004BA680 /* Repositories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F32E7A528D9DD78004BA680 /* Repositories.storyboard */; };
+		7F32E7A828D9DD90004BA680 /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F32E7A728D9DD90004BA680 /* Users.storyboard */; };
+		7F32E7AB28D9DE47004BA680 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7AA28D9DE47004BA680 /* MainFlowCoordinator.swift */; };
+		7F32E7AD28D9DE51004BA680 /* UsersFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7AC28D9DE51004BA680 /* UsersFlowCoordinator.swift */; };
+		7F32E7AF28D9DFAE004BA680 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7AE28D9DFAE004BA680 /* StateController.swift */; };
 		7F45196A28D4A37E00EF437C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45196928D4A37E00EF437C /* AppDelegate.swift */; };
 		7F45197128D4A37E00EF437C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F45196F28D4A37E00EF437C /* Main.storyboard */; };
 		7F45197328D4A37F00EF437C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F45197228D4A37F00EF437C /* Assets.xcassets */; };
@@ -123,6 +128,11 @@
 		7F126CA828D6C3A600FF8302 /* ArrayTableViewDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTableViewDataSourceTests.swift; sourceTree = "<group>"; };
 		7F126CAE28D6C54800FF8302 /* Users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Users.json; sourceTree = "<group>"; };
 		7F126CB028D6C55700FF8302 /* Repositories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Repositories.json; sourceTree = "<group>"; };
+		7F32E7A528D9DD78004BA680 /* Repositories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repositories.storyboard; sourceTree = "<group>"; };
+		7F32E7A728D9DD90004BA680 /* Users.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
+		7F32E7AA28D9DE47004BA680 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
+		7F32E7AC28D9DE51004BA680 /* UsersFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersFlowCoordinator.swift; sourceTree = "<group>"; };
+		7F32E7AE28D9DFAE004BA680 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
 		7F45196628D4A37E00EF437C /* Repositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Repositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F45196928D4A37E00EF437C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F45197028D4A37E00EF437C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -205,6 +215,7 @@
 		7F126C7E28D63B1F00FF8302 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7F32E7AE28D9DFAE004BA680 /* StateController.swift */,
 				7F126C7C28D63AFF00FF8302 /* NetworkController.swift */,
 				7F9AB99428D4B451002EE4A8 /* Caching */,
 				7F9AB99528D4B459002EE4A8 /* Model Types */,
@@ -216,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				7F126C8128D6BF2B00FF8302 /* Loader.swift */,
+				7F32E7A928D9DE0C004BA680 /* Coordinators */,
 				7F126C8328D6BF3300FF8302 /* Users */,
 				7FB0C66628D95BAF001DA765 /* Profile */,
 				7FB0C68E28D96266001DA765 /* Edit Profile */,
@@ -273,6 +285,15 @@
 			path = "Dummy data";
 			sourceTree = "<group>";
 		};
+		7F32E7A928D9DE0C004BA680 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				7F32E7AA28D9DE47004BA680 /* MainFlowCoordinator.swift */,
+				7F32E7AC28D9DE51004BA680 /* UsersFlowCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		7F45195D28D4A37E00EF437C = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +317,8 @@
 			isa = PBXGroup;
 			children = (
 				7F45196F28D4A37E00EF437C /* Main.storyboard */,
+				7F32E7A528D9DD78004BA680 /* Repositories.storyboard */,
+				7F32E7A728D9DD90004BA680 /* Users.storyboard */,
 				7F45197428D4A37F00EF437C /* LaunchScreen.storyboard */,
 				7F45196928D4A37E00EF437C /* AppDelegate.swift */,
 				7F45197228D4A37F00EF437C /* Assets.xcassets */,
@@ -512,9 +535,11 @@
 				7F45197628D4A37F00EF437C /* LaunchScreen.storyboard in Resources */,
 				7F126C9428D6C09200FF8302 /* Repositories.json in Resources */,
 				7F45197328D4A37F00EF437C /* Assets.xcassets in Resources */,
+				7F32E7A828D9DD90004BA680 /* Users.storyboard in Resources */,
 				7F126C9528D6C09200FF8302 /* Users.json in Resources */,
 				7FB0C66528D95B64001DA765 /* Repository.json in Resources */,
 				7FB0C66328D95B5C001DA765 /* User.json in Resources */,
+				7F32E7A628D9DD78004BA680 /* Repositories.storyboard in Resources */,
 				7F45197128D4A37E00EF437C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,6 +575,7 @@
 				7FB0C67D28D95D2D001DA765 /* ReadmeCell.swift in Sources */,
 				7FB0C68128D95D43001DA765 /* DescriptionCell.swift in Sources */,
 				7F45199E28D4AE5E00EF437C /* Decoding.swift in Sources */,
+				7F32E7AB28D9DE47004BA680 /* MainFlowCoordinator.swift in Sources */,
 				7FB0C68528D95D60001DA765 /* RepositoryViewController.swift in Sources */,
 				7F126C8E28D6C03700FF8302 /* RepositoriesViewController.swift in Sources */,
 				7FB0C66F28D95C1C001DA765 /* SummaryCell.swift in Sources */,
@@ -589,9 +615,11 @@
 				7F126C9E28D6C17B00FF8302 /* UIView+Extension.swift in Sources */,
 				7FB0C66D28D95C12001DA765 /* ListCell.swift in Sources */,
 				7FB0C68728D95D75001DA765 /* RepositoryTableViewDataSource.swift in Sources */,
+				7F32E7AD28D9DE51004BA680 /* UsersFlowCoordinator.swift in Sources */,
 				7F126C7D28D63AFF00FF8302 /* NetworkController.swift in Sources */,
 				7FB0C68328D95D53001DA765 /* RepositoryNameCell.swift in Sources */,
 				7F126CA128D6C17B00FF8302 /* UITableView+Extension.swift in Sources */,
+				7F32E7AF28D9DFAE004BA680 /* StateController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

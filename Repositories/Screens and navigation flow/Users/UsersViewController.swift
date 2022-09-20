@@ -7,22 +7,29 @@
 
 import UIKit
 
-class UsersViewController: UIViewController {
+class UsersViewController: UIViewController, Stateful, MainCoordinated {
     @IBOutlet private weak var tableView: UITableView!
     private var dataSource: UsersTableViewDataSource?
+    
+    var stateController: StateController?
+    weak var mainCoordinator: MainFlowCoordinator?
 }
 
-// MARK: - Lifecycle
+// MARK: UIViewController
 
 extension UsersViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let users: [User] = Loader.loadDataFromJSONFile(withName: "Users") else {
+        guard let users = stateController?.users else {
             return
         }
         let dataSource = UsersTableViewDataSource(users: users)
         self.dataSource = dataSource
         tableView.dataSource = dataSource
         tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        mainCoordinator?.configure(viewController: segue.destination)
     }
 }

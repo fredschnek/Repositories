@@ -15,9 +15,14 @@ class RepositoryTableViewDataSource: NSObject {
         self.repository = repository
         organizer = DataOrganizer(repository: repository)
     }
+    
+    func row(at index: Int) -> RepositoryViewController.Row {
+        return organizer.row(at: index)
+    }
 }
 
 // MARK: UITableViewDataSource
+
 extension RepositoryTableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return organizer.rowsCount
@@ -34,6 +39,7 @@ extension RepositoryTableViewDataSource: UITableViewDataSource {
 }
 
 // MARK: - DataOrganizer
+
 extension RepositoryTableViewDataSource {
     struct DataOrganizer {
         private let rows: [RepositoryViewController.Row]
@@ -65,6 +71,7 @@ extension RepositoryTableViewDataSource {
 }
 
 // MARK: - OwnerCell.ViewModel
+
 extension OwnerCell.ViewModel {
     init(repository: Repository) {
         avatar = #imageLiteral(resourceName: "Avatar")
@@ -77,6 +84,7 @@ extension OwnerCell.ViewModel {
 }
 
 // MARK: - CountersCell.ViewModel
+
 extension CountersCell.ViewModel {
     init(repository: Repository) {
         starsCount = repository.stargazersCount
@@ -85,6 +93,7 @@ extension CountersCell.ViewModel {
 }
 
 // MARK: - RepositoryConfigurable
+
 protocol RepositoryConfigurable {
     func configure(with repository: Repository)
 }

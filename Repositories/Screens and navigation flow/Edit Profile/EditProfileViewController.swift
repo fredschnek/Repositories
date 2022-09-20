@@ -7,21 +7,32 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, Stateful, UsersCoordinated {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var saveButton: UIBarButtonItem!
     @IBOutlet private var scrollingController: TableViewScrollingController!
     
     private var dataSource: EditProfileTableViewDataSource?
     private var keyboardObservers: [NSObjectProtocol] = []
+    
+    var stateController: StateController?
+    weak var usersCoordinator: UsersFlowCoordinator?
+    
+    var avatar: UIImage? {
+        didSet {
+            avatar.map { dataSource?.set(avatar:$0) }
+            tableView.reloadData()
+        }
+    }
 }
 
 // MARK: UIViewController
+
 extension EditProfileViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForKeyboardNotifications()
-        guard let user: User = Loader.loadDataFromJSONFile(withName: "User") else {
+        guard let user = stateController?.user else {
             return
         }
         let dataSource = EditProfileTableViewDataSource(user: user)
@@ -33,6 +44,7 @@ extension EditProfileViewController {
 }
 
 // MARK: UITableViewDelegate
+
 extension EditProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         switch cell {
@@ -45,6 +57,7 @@ extension EditProfileViewController: UITableViewDelegate {
 }
 
 // MARK: ScrollingDelegate
+
 extension EditProfileViewController: ScrollingDelegate {
     func activeViewDidChange(_ view: UIView?) {
         guard let activeView = view else {
@@ -57,13 +70,15 @@ extension EditProfileViewController: ScrollingDelegate {
 }
 
 // MARK: AvatarInputCellDelegate
+
 extension EditProfileViewController: AvatarInputCellDelegate {
     func photoCellDidEditPhoto(_ cell: AvatarInputCell) {
-        show(UIImagePickerController(), sender: nil)
+        usersCoordinator?.viewControllerDidEditPhoto(self)
     }
 }
 
 // MARK: DetailInputCellDelegate
+
 extension EditProfileViewController: DetailInputCellDelegate {
     func inputCell(_ cell: DetailInputCell, didChange text: String) {
         guard let dataSource = dataSource,
@@ -83,6 +98,7 @@ extension EditProfileViewController: DetailInputCellDelegate {
 }
 
 // MARK: BioInputCellDelegate
+
 extension EditProfileViewController: BioInputCellDelegate {
     func bioCell(_ cell: BioInputCell, didChange text: String) {
         UIView.setAnimationsEnabled(false)
@@ -97,7 +113,15 @@ extension EditProfileViewController: BioInputCellDelegate {
     }
 }
 
+extension EditProfileViewController: UsersCoordinatorDelegate {
+    func coordinatorDidPick(image: UIImage) {
+        dataSource?.set(avatar: image)
+        tableView.reloadData()
+    }
+}
+
 // MARK: Private
+
 private extension EditProfileViewController {
     func registerForKeyboardNotifications() {
         let defaultCenter = NotificationCenter.default
@@ -112,6 +136,7 @@ private extension EditProfileViewController {
 }
 
 // MARK: - Row
+
 extension EditProfileViewController {
     enum Row {
         case avatar(UIImage)
@@ -178,6 +203,7 @@ extension EditProfileViewController {
 }
 
 // MARK: - Notification
+
 extension Notification {
     var keyboardFrame: CGRect {
         return (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue ?? CGRect.zero

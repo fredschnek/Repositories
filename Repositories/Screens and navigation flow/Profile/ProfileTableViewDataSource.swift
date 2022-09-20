@@ -19,9 +19,14 @@ class ProfileTableViewDataSource: NSObject {
     func section(at index: Int) -> ProfileViewController.Section {
         return organizer.section(at: index)
     }
+    
+    func row(at indexPath: IndexPath) -> RowType {
+        return organizer.row(at: indexPath)
+    }
 }
 
 // MARK: UITableViewDataSource
+
 extension ProfileTableViewDataSource: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return organizer.sectionsCount
@@ -44,6 +49,7 @@ extension ProfileTableViewDataSource: UITableViewDataSource {
 }
 
 // MARK: - DataOrganizer
+
 extension ProfileTableViewDataSource {
     struct DataOrganizer {
         private let sections: [ProfileViewController.Section]
@@ -76,6 +82,7 @@ extension ProfileTableViewDataSource {
 }
 
 // MARK: RowConfigurable
+
 protocol UserConfigurable {
     func configureWith(user: User, row: RowType)
 }

@@ -7,31 +7,39 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, Stateful, MainCoordinated, UsersCoordinated {
     @IBOutlet private weak var tableView: UITableView!
     private var dataSource: ProfileTableViewDataSource?
+    var stateController: StateController?
+    
+    weak var mainCoordinator: MainFlowCoordinator?
+    weak var usersCoordinator: UsersFlowCoordinator?
     
     @IBAction func cancel(_ segue: UIStoryboardSegue) {}
 }
 
 // MARK: UIViewController
+
 extension ProfileViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard var user: User = Loader.loadDataFromJSONFile(withName: "User"),
-              let repositories: [Repository] = Loader.loadDataFromJSONFile(withName: "Repositories") else {
+        guard let user = stateController?.user else {
             return
         }
-        user.stars.value = .fetched(value: repositories)
         let dataSource = ProfileTableViewDataSource(user: user)
         self.dataSource = dataSource
         tableView.dataSource = dataSource
         tableView.delegate = self
         tableView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        mainCoordinator?.configure(viewController: segue.destination)
+    }
 }
 
 // MARK: UITableViewDelegate
+
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return dataSource?.section(at: section).headerHeight ?? 0
@@ -40,9 +48,30 @@ extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = .clear
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dataSource.map { dataSource in
+            let row = dataSource.row(at: indexPath)
+            (row as? Section.DetailRow).map { row in
+                let details = stateController?.user?.details.fetchedValue
+                switch row {
+                case .email: details?.email.map { usersCoordinator?.profileViewController(self, didSelectEmail: $0) }
+                case .blog: details?.blog.map { mainCoordinator?.viewController(self, didSelectURL: $0) }
+                default: break
+                }
+            }
+            (row as? Section.ListRow).map { row in
+                switch row {
+                case .followers, .following: usersCoordinator?.profileViewControllerDidSelectUsers(self)
+                case .repositories, .stars: usersCoordinator?.profileViewControllerDidSelectRepositories(self)
+                }
+            }
+        }
+    }
 }
 
 // MARK: - Section
+
 extension ProfileViewController {
     enum Section {
         case summary([SummaryRow])
@@ -150,4 +179,3 @@ extension ProfileViewController.Section {
         }
     }
 }
-

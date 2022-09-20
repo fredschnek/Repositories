@@ -7,22 +7,29 @@
 
 import UIKit
 
-class RepositoriesViewController: UIViewController {
+class RepositoriesViewController: UIViewController, Stateful, MainCoordinated {
     @IBOutlet private weak var tableView: UITableView!
     private var dataSource: RepositoriesTableViewDataSource?
+    
+    var stateController: StateController?
+    weak var mainCoordinator: MainFlowCoordinator?
 }
 
-// MARK: Lifecycle
+// MARK: UIViewController
 
 extension RepositoriesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let repositories: [Repository] = Loader.loadDataFromJSONFile(withName: "Repositories") else {
+        guard let repositories = stateController?.repositories else {
             return
         }
         let dataSource = RepositoriesTableViewDataSource(repositories: repositories)
         self.dataSource = dataSource
         tableView.dataSource = dataSource
         tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        mainCoordinator?.configure(viewController: segue.destination)
     }
 }

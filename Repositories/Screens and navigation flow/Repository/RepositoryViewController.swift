@@ -7,27 +7,51 @@
 
 import UIKit
 
-class RepositoryViewController: UIViewController {
+class RepositoryViewController: UIViewController, Stateful, MainCoordinated {
     @IBOutlet private weak var tableView: UITableView!
     private var dataSource: RepositoryTableViewDataSource?
+    
+    var stateController: StateController?
+    weak var mainCoordinator: MainFlowCoordinator?
 }
 
 // MARK: UIViewController
+
 extension RepositoryViewController {
     override func viewDidLoad() {
-        guard var repository: Repository = Loader.loadDataFromJSONFile(withName: "Repository") else {
+        guard let repository = stateController?.repository else {
             return
         }
-        let readMeURL = URL(string: "https://github.com/octokit/octokit.rb/blob/master/README.md")!
-        repository.readMe = FetchableValue(url: readMeURL, value: .fetched(value: ""))
         let dataSource = RepositoryTableViewDataSource(repository: repository)
         self.dataSource = dataSource
         tableView.dataSource = dataSource
         super.viewDidLoad()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        mainCoordinator?.configure(viewController: segue.destination)
+    }
+}
+
+// MARK: UITableViewDelegate
+
+extension RepositoryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let dataSource = dataSource else {
+            return
+        }
+        switch dataSource.row(at: indexPath.row) {
+        case .readme:
+            if let readmeURL = stateController?.repository?.readMe.url {
+                mainCoordinator?.viewController(self, didSelectURL: readmeURL)
+            }
+        default: break
+        }
+    }
 }
 
 // MARK: - Row
+
 extension RepositoryViewController {
     enum Row {
         case name
