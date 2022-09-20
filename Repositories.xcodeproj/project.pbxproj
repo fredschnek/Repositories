@@ -36,6 +36,12 @@
 		7F32E7AB28D9DE47004BA680 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7AA28D9DE47004BA680 /* MainFlowCoordinator.swift */; };
 		7F32E7AD28D9DE51004BA680 /* UsersFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7AC28D9DE51004BA680 /* UsersFlowCoordinator.swift */; };
 		7F32E7AF28D9DFAE004BA680 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7AE28D9DFAE004BA680 /* StateController.swift */; };
+		7F32E7B228D9E13E004BA680 /* GitHubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7B128D9E13E004BA680 /* GitHubEndpoint.swift */; };
+		7F32E7B528D9E186004BA680 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7B428D9E186004BA680 /* NetworkRequest.swift */; };
+		7F32E7B728D9E190004BA680 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7B628D9E190004BA680 /* ImageRequest.swift */; };
+		7F32E7B928D9E197004BA680 /* AccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7B828D9E197004BA680 /* AccessTokenRequest.swift */; };
+		7F32E7BB28D9E19F004BA680 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7BA28D9E19F004BA680 /* APIRequest.swift */; };
+		7F32E7BD28D9E22D004BA680 /* NetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7BC28D9E22D004BA680 /* NetworkRequestTests.swift */; };
 		7F45196A28D4A37E00EF437C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45196928D4A37E00EF437C /* AppDelegate.swift */; };
 		7F45197128D4A37E00EF437C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F45196F28D4A37E00EF437C /* Main.storyboard */; };
 		7F45197328D4A37F00EF437C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F45197228D4A37F00EF437C /* Assets.xcassets */; };
@@ -133,6 +139,12 @@
 		7F32E7AA28D9DE47004BA680 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
 		7F32E7AC28D9DE51004BA680 /* UsersFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersFlowCoordinator.swift; sourceTree = "<group>"; };
 		7F32E7AE28D9DFAE004BA680 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
+		7F32E7B128D9E13E004BA680 /* GitHubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubEndpoint.swift; sourceTree = "<group>"; };
+		7F32E7B428D9E186004BA680 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		7F32E7B628D9E190004BA680 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
+		7F32E7B828D9E197004BA680 /* AccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenRequest.swift; sourceTree = "<group>"; };
+		7F32E7BA28D9E19F004BA680 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		7F32E7BC28D9E22D004BA680 /* NetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestTests.swift; sourceTree = "<group>"; };
 		7F45196628D4A37E00EF437C /* Repositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Repositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F45196928D4A37E00EF437C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F45197028D4A37E00EF437C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -216,7 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				7F32E7AE28D9DFAE004BA680 /* StateController.swift */,
-				7F126C7C28D63AFF00FF8302 /* NetworkController.swift */,
+				7F32E7B028D9E125004BA680 /* Networking */,
 				7F9AB99428D4B451002EE4A8 /* Caching */,
 				7F9AB99528D4B459002EE4A8 /* Model Types */,
 			);
@@ -294,6 +306,27 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		7F32E7B028D9E125004BA680 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7F32E7B128D9E13E004BA680 /* GitHubEndpoint.swift */,
+				7F126C7C28D63AFF00FF8302 /* NetworkController.swift */,
+				7F32E7B328D9E163004BA680 /* Network Requests */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7F32E7B328D9E163004BA680 /* Network Requests */ = {
+			isa = PBXGroup;
+			children = (
+				7F32E7BA28D9E19F004BA680 /* APIRequest.swift */,
+				7F32E7B628D9E190004BA680 /* ImageRequest.swift */,
+				7F32E7B428D9E186004BA680 /* NetworkRequest.swift */,
+				7F32E7B828D9E197004BA680 /* AccessTokenRequest.swift */,
+			);
+			path = "Network Requests";
+			sourceTree = "<group>";
+		};
 		7F45195D28D4A37E00EF437C = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +369,7 @@
 				7F4519A928D4B04500EF437C /* Helpers.swift */,
 				7F126CA628D6C3A600FF8302 /* DateTests.swift */,
 				7F126CA428D6C3A600FF8302 /* RepositoryCellTests.swift */,
+				7F32E7BC28D9E22D004BA680 /* NetworkRequestTests.swift */,
 				7F126C7828D6370C00FF8302 /* CachingControllerTests.swift */,
 				7F126CA828D6C3A600FF8302 /* ArrayTableViewDataSourceTests.swift */,
 				7F126CA728D6C3A600FF8302 /* FileSystemCacheControllerTests.swift */,
@@ -573,8 +607,10 @@
 				7FB0C69628D962B9001DA765 /* EditProfileTableViewDataSource.swift in Sources */,
 				7FB0C67F28D95D3A001DA765 /* CountersCell.swift in Sources */,
 				7FB0C67D28D95D2D001DA765 /* ReadmeCell.swift in Sources */,
+				7F32E7B228D9E13E004BA680 /* GitHubEndpoint.swift in Sources */,
 				7FB0C68128D95D43001DA765 /* DescriptionCell.swift in Sources */,
 				7F45199E28D4AE5E00EF437C /* Decoding.swift in Sources */,
+				7F32E7B728D9E190004BA680 /* ImageRequest.swift in Sources */,
 				7F32E7AB28D9DE47004BA680 /* MainFlowCoordinator.swift in Sources */,
 				7FB0C68528D95D60001DA765 /* RepositoryViewController.swift in Sources */,
 				7F126C8E28D6C03700FF8302 /* RepositoriesViewController.swift in Sources */,
@@ -586,6 +622,7 @@
 				7FB0C66928D95C04001DA765 /* AvatarCell.swift in Sources */,
 				7FB0C67728D95D10001DA765 /* DateCell.swift in Sources */,
 				7F45196A28D4A37E00EF437C /* AppDelegate.swift in Sources */,
+				7F32E7BB28D9E19F004BA680 /* APIRequest.swift in Sources */,
 				7FB0C67B28D95D24001DA765 /* ParentCell.swift in Sources */,
 				7F126CA328D6C17B00FF8302 /* UITabBar+Extension.swift in Sources */,
 				7F126C9028D6C05700FF8302 /* RepositoriesTableViewDataSource.swift in Sources */,
@@ -595,6 +632,7 @@
 				7FB0C69228D96297001DA765 /* BioInputCell.swift in Sources */,
 				7F126CA228D6C17B00FF8302 /* UINavigationBar+Extension.swift in Sources */,
 				7FB0C67128D95C36001DA765 /* ProfileViewController.swift in Sources */,
+				7F32E7B528D9E186004BA680 /* NetworkRequest.swift in Sources */,
 				7FB0C69C28D962E4001DA765 /* User+EditProfileViewController.Row.swift in Sources */,
 				7F126CA028D6C17B00FF8302 /* UIColor+Extension.swift in Sources */,
 				7FB0C69428D962A4001DA765 /* DetailInputCell.swift in Sources */,
@@ -618,6 +656,7 @@
 				7F32E7AD28D9DE51004BA680 /* UsersFlowCoordinator.swift in Sources */,
 				7F126C7D28D63AFF00FF8302 /* NetworkController.swift in Sources */,
 				7FB0C68328D95D53001DA765 /* RepositoryNameCell.swift in Sources */,
+				7F32E7B928D9E197004BA680 /* AccessTokenRequest.swift in Sources */,
 				7F126CA128D6C17B00FF8302 /* UITableView+Extension.swift in Sources */,
 				7F32E7AF28D9DFAE004BA680 /* StateController.swift in Sources */,
 			);
@@ -639,6 +678,7 @@
 				7FB0C68B28D95FB0001DA765 /* RepositoryTableViewDataSourceTests.swift in Sources */,
 				7F126C7928D6370C00FF8302 /* CachingControllerTests.swift in Sources */,
 				7F126CA928D6C3A600FF8302 /* RepositoryCellTests.swift in Sources */,
+				7F32E7BD28D9E22D004BA680 /* NetworkRequestTests.swift in Sources */,
 				7F126CAB28D6C3A600FF8302 /* DateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
