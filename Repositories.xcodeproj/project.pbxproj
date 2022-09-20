@@ -49,7 +49,6 @@
 		7F4519B028D4B0FC00EF437C /* Repository.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F4519AF28D4B0FC00EF437C /* Repository.json */; };
 		7F9AB99928D4B4EA002EE4A8 /* CachingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AB99828D4B4EA002EE4A8 /* CachingController.swift */; };
 		7F9AB99B28D4B515002EE4A8 /* FileSystemCacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AB99A28D4B515002EE4A8 /* FileSystemCacheController.swift */; };
-		7FB0C65F28D95A87001DA765 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C65E28D95A87001DA765 /* PaddedLabel.swift */; };
 		7FB0C66128D95AFE001DA765 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C66028D95AFE001DA765 /* UITableViewCell+Extension.swift */; };
 		7FB0C66328D95B5C001DA765 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FB0C66228D95B5C001DA765 /* User.json */; };
 		7FB0C66528D95B64001DA765 /* Repository.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FB0C66428D95B64001DA765 /* Repository.json */; };
@@ -71,6 +70,15 @@
 		7FB0C68728D95D75001DA765 /* RepositoryTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C68628D95D75001DA765 /* RepositoryTableViewDataSource.swift */; };
 		7FB0C68928D95F9F001DA765 /* ProfileTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C68828D95F9F001DA765 /* ProfileTableViewDataSourceTests.swift */; };
 		7FB0C68B28D95FB0001DA765 /* RepositoryTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C68A28D95FB0001DA765 /* RepositoryTableViewDataSourceTests.swift */; };
+		7FB0C68D28D961C3001DA765 /* Paddable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C68C28D961C3001DA765 /* Paddable.swift */; };
+		7FB0C69028D9628D001DA765 /* AvatarInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C68F28D9628D001DA765 /* AvatarInputCell.swift */; };
+		7FB0C69228D96297001DA765 /* BioInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C69128D96297001DA765 /* BioInputCell.swift */; };
+		7FB0C69428D962A4001DA765 /* DetailInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C69328D962A4001DA765 /* DetailInputCell.swift */; };
+		7FB0C69628D962B9001DA765 /* EditProfileTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C69528D962B9001DA765 /* EditProfileTableViewDataSource.swift */; };
+		7FB0C69828D962C7001DA765 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C69728D962C7001DA765 /* EditProfileViewController.swift */; };
+		7FB0C69A28D962D7001DA765 /* TableViewScrollingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C69928D962D7001DA765 /* TableViewScrollingController.swift */; };
+		7FB0C69C28D962E4001DA765 /* User+EditProfileViewController.Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C69B28D962E4001DA765 /* User+EditProfileViewController.Row.swift */; };
+		7FB0C69E28D96369001DA765 /* EditProfileTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C69D28D96369001DA765 /* EditProfileTableViewDataSourceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,7 +145,6 @@
 		7F4519AF28D4B0FC00EF437C /* Repository.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Repository.json; sourceTree = "<group>"; };
 		7F9AB99828D4B4EA002EE4A8 /* CachingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingController.swift; sourceTree = "<group>"; };
 		7F9AB99A28D4B515002EE4A8 /* FileSystemCacheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemCacheController.swift; sourceTree = "<group>"; };
-		7FB0C65E28D95A87001DA765 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		7FB0C66028D95AFE001DA765 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		7FB0C66228D95B5C001DA765 /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
 		7FB0C66428D95B64001DA765 /* Repository.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Repository.json; sourceTree = "<group>"; };
@@ -159,6 +166,15 @@
 		7FB0C68628D95D75001DA765 /* RepositoryTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewDataSource.swift; sourceTree = "<group>"; };
 		7FB0C68828D95F9F001DA765 /* ProfileTableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewDataSourceTests.swift; sourceTree = "<group>"; };
 		7FB0C68A28D95FB0001DA765 /* RepositoryTableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewDataSourceTests.swift; sourceTree = "<group>"; };
+		7FB0C68C28D961C3001DA765 /* Paddable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paddable.swift; sourceTree = "<group>"; };
+		7FB0C68F28D9628D001DA765 /* AvatarInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarInputCell.swift; sourceTree = "<group>"; };
+		7FB0C69128D96297001DA765 /* BioInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioInputCell.swift; sourceTree = "<group>"; };
+		7FB0C69328D962A4001DA765 /* DetailInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInputCell.swift; sourceTree = "<group>"; };
+		7FB0C69528D962B9001DA765 /* EditProfileTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewDataSource.swift; sourceTree = "<group>"; };
+		7FB0C69728D962C7001DA765 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		7FB0C69928D962D7001DA765 /* TableViewScrollingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewScrollingController.swift; sourceTree = "<group>"; };
+		7FB0C69B28D962E4001DA765 /* User+EditProfileViewController.Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+EditProfileViewController.Row.swift"; sourceTree = "<group>"; };
+		7FB0C69D28D96369001DA765 /* EditProfileTableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewDataSourceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +218,7 @@
 				7F126C8128D6BF2B00FF8302 /* Loader.swift */,
 				7F126C8328D6BF3300FF8302 /* Users */,
 				7FB0C66628D95BAF001DA765 /* Profile */,
+				7FB0C68E28D96266001DA765 /* Edit Profile */,
 				7FB0C66728D95BB8001DA765 /* Repository */,
 				7F126C8A28D6BFF700FF8302 /* Repositories */,
 				7F126C9128D6C07900FF8302 /* Dummy data */,
@@ -220,6 +237,7 @@
 				7F126C9B28D6C17B00FF8302 /* UITableView+Extension.swift */,
 				7FB0C66028D95AFE001DA765 /* UITableViewCell+Extension.swift */,
 				7F126C9828D6C17A00FF8302 /* UIView+Extension.swift */,
+				7FB0C68C28D961C3001DA765 /* Paddable.swift */,
 			);
 			path = "Protocols and extensions";
 			sourceTree = "<group>";
@@ -284,7 +302,6 @@
 				7F126C7E28D63B1F00FF8302 /* Core */,
 				7F126C7F28D6BEE900FF8302 /* Screens and navigation flow */,
 				7F126C8028D6BEFC00FF8302 /* Protocols and extensions */,
-				7FB0C65D28D95A6A001DA765 /* Custom Views */,
 				7F45197728D4A37F00EF437C /* Info.plist */,
 			);
 			path = Repositories;
@@ -301,6 +318,7 @@
 				7F126CA728D6C3A600FF8302 /* FileSystemCacheControllerTests.swift */,
 				7FB0C68828D95F9F001DA765 /* ProfileTableViewDataSourceTests.swift */,
 				7FB0C68A28D95FB0001DA765 /* RepositoryTableViewDataSourceTests.swift */,
+				7FB0C69D28D96369001DA765 /* EditProfileTableViewDataSourceTests.swift */,
 				7F9AB99728D4B4C2002EE4A8 /* Model Types */,
 				7F4519AB28D4B0BD00EF437C /* User.json */,
 				7F126CAE28D6C54800FF8302 /* Users.json */,
@@ -342,14 +360,6 @@
 			path = "Model Types";
 			sourceTree = "<group>";
 		};
-		7FB0C65D28D95A6A001DA765 /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				7FB0C65E28D95A87001DA765 /* PaddedLabel.swift */,
-			);
-			path = "Custom Views";
-			sourceTree = "<group>";
-		};
 		7FB0C66628D95BAF001DA765 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +388,20 @@
 				7FB0C68628D95D75001DA765 /* RepositoryTableViewDataSource.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		7FB0C68E28D96266001DA765 /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7FB0C69128D96297001DA765 /* BioInputCell.swift */,
+				7FB0C69328D962A4001DA765 /* DetailInputCell.swift */,
+				7FB0C68F28D9628D001DA765 /* AvatarInputCell.swift */,
+				7FB0C69728D962C7001DA765 /* EditProfileViewController.swift */,
+				7FB0C69528D962B9001DA765 /* EditProfileTableViewDataSource.swift */,
+				7FB0C69B28D962E4001DA765 /* User+EditProfileViewController.Row.swift */,
+				7FB0C69928D962D7001DA765 /* TableViewScrollingController.swift */,
+			);
+			path = "Edit Profile";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB0C69628D962B9001DA765 /* EditProfileTableViewDataSource.swift in Sources */,
 				7FB0C67F28D95D3A001DA765 /* CountersCell.swift in Sources */,
 				7FB0C67D28D95D2D001DA765 /* ReadmeCell.swift in Sources */,
 				7FB0C68128D95D43001DA765 /* DescriptionCell.swift in Sources */,
@@ -528,6 +553,7 @@
 				7FB0C68528D95D60001DA765 /* RepositoryViewController.swift in Sources */,
 				7F126C8E28D6C03700FF8302 /* RepositoriesViewController.swift in Sources */,
 				7FB0C66F28D95C1C001DA765 /* SummaryCell.swift in Sources */,
+				7FB0C69828D962C7001DA765 /* EditProfileViewController.swift in Sources */,
 				7FB0C66B28D95C0C001DA765 /* DetailCell.swift in Sources */,
 				7F126C8C28D6C02000FF8302 /* RepositoryCell.swift in Sources */,
 				7F126C8728D6BF9F00FF8302 /* UsersViewController.swift in Sources */,
@@ -538,17 +564,22 @@
 				7F126CA328D6C17B00FF8302 /* UITabBar+Extension.swift in Sources */,
 				7F126C9028D6C05700FF8302 /* RepositoriesTableViewDataSource.swift in Sources */,
 				7F45199A28D4AC9D00EF437C /* User.swift in Sources */,
+				7FB0C69028D9628D001DA765 /* AvatarInputCell.swift in Sources */,
 				7F126C8228D6BF2B00FF8302 /* Loader.swift in Sources */,
+				7FB0C69228D96297001DA765 /* BioInputCell.swift in Sources */,
 				7F126CA228D6C17B00FF8302 /* UINavigationBar+Extension.swift in Sources */,
 				7FB0C67128D95C36001DA765 /* ProfileViewController.swift in Sources */,
+				7FB0C69C28D962E4001DA765 /* User+EditProfileViewController.Row.swift in Sources */,
 				7F126CA028D6C17B00FF8302 /* UIColor+Extension.swift in Sources */,
-				7FB0C65F28D95A87001DA765 /* PaddedLabel.swift in Sources */,
+				7FB0C69428D962A4001DA765 /* DetailInputCell.swift in Sources */,
 				7F45199C28D4ACBE00EF437C /* Repository.swift in Sources */,
 				7F4519A028D4AE7300EF437C /* ModelTypes.swift in Sources */,
 				7FB0C67528D95C53001DA765 /* User+ProfileViewController.Section.swift in Sources */,
 				7FB0C67328D95C48001DA765 /* ProfileTableViewDataSource.swift in Sources */,
 				7FB0C67928D95D1D001DA765 /* OwnerCell.swift in Sources */,
+				7FB0C69A28D962D7001DA765 /* TableViewScrollingController.swift in Sources */,
 				7F126C9728D6C15C00FF8302 /* ArrayTableViewDataSource+Extension.swift in Sources */,
+				7FB0C68D28D961C3001DA765 /* Paddable.swift in Sources */,
 				7F126C8928D6BFDC00FF8302 /* UsersTableViewDataSource.swift in Sources */,
 				7F9AB99928D4B4EA002EE4A8 /* CachingController.swift in Sources */,
 				7F9AB99B28D4B515002EE4A8 /* FileSystemCacheController.swift in Sources */,
@@ -575,6 +606,7 @@
 				7F4519A428D4AFEB00EF437C /* URLTests.swift in Sources */,
 				7F4519AA28D4B04500EF437C /* Helpers.swift in Sources */,
 				7F4519A828D4B02A00EF437C /* RepositoryTests.swift in Sources */,
+				7FB0C69E28D96369001DA765 /* EditProfileTableViewDataSourceTests.swift in Sources */,
 				7F126CAC28D6C3A600FF8302 /* FileSystemCacheControllerTests.swift in Sources */,
 				7FB0C68B28D95FB0001DA765 /* RepositoryTableViewDataSourceTests.swift in Sources */,
 				7F126C7928D6370C00FF8302 /* CachingControllerTests.swift in Sources */,
