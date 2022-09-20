@@ -49,6 +49,28 @@
 		7F4519B028D4B0FC00EF437C /* Repository.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F4519AF28D4B0FC00EF437C /* Repository.json */; };
 		7F9AB99928D4B4EA002EE4A8 /* CachingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AB99828D4B4EA002EE4A8 /* CachingController.swift */; };
 		7F9AB99B28D4B515002EE4A8 /* FileSystemCacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AB99A28D4B515002EE4A8 /* FileSystemCacheController.swift */; };
+		7FB0C65F28D95A87001DA765 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C65E28D95A87001DA765 /* PaddedLabel.swift */; };
+		7FB0C66128D95AFE001DA765 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C66028D95AFE001DA765 /* UITableViewCell+Extension.swift */; };
+		7FB0C66328D95B5C001DA765 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FB0C66228D95B5C001DA765 /* User.json */; };
+		7FB0C66528D95B64001DA765 /* Repository.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FB0C66428D95B64001DA765 /* Repository.json */; };
+		7FB0C66928D95C04001DA765 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C66828D95C04001DA765 /* AvatarCell.swift */; };
+		7FB0C66B28D95C0C001DA765 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C66A28D95C0C001DA765 /* DetailCell.swift */; };
+		7FB0C66D28D95C12001DA765 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C66C28D95C12001DA765 /* ListCell.swift */; };
+		7FB0C66F28D95C1C001DA765 /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C66E28D95C1C001DA765 /* SummaryCell.swift */; };
+		7FB0C67128D95C36001DA765 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C67028D95C36001DA765 /* ProfileViewController.swift */; };
+		7FB0C67328D95C48001DA765 /* ProfileTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C67228D95C48001DA765 /* ProfileTableViewDataSource.swift */; };
+		7FB0C67528D95C53001DA765 /* User+ProfileViewController.Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C67428D95C53001DA765 /* User+ProfileViewController.Section.swift */; };
+		7FB0C67728D95D10001DA765 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C67628D95D10001DA765 /* DateCell.swift */; };
+		7FB0C67928D95D1D001DA765 /* OwnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C67828D95D1D001DA765 /* OwnerCell.swift */; };
+		7FB0C67B28D95D24001DA765 /* ParentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C67A28D95D24001DA765 /* ParentCell.swift */; };
+		7FB0C67D28D95D2D001DA765 /* ReadmeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C67C28D95D2D001DA765 /* ReadmeCell.swift */; };
+		7FB0C67F28D95D3A001DA765 /* CountersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C67E28D95D3A001DA765 /* CountersCell.swift */; };
+		7FB0C68128D95D43001DA765 /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C68028D95D43001DA765 /* DescriptionCell.swift */; };
+		7FB0C68328D95D53001DA765 /* RepositoryNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C68228D95D53001DA765 /* RepositoryNameCell.swift */; };
+		7FB0C68528D95D60001DA765 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C68428D95D60001DA765 /* RepositoryViewController.swift */; };
+		7FB0C68728D95D75001DA765 /* RepositoryTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C68628D95D75001DA765 /* RepositoryTableViewDataSource.swift */; };
+		7FB0C68928D95F9F001DA765 /* ProfileTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C68828D95F9F001DA765 /* ProfileTableViewDataSourceTests.swift */; };
+		7FB0C68B28D95FB0001DA765 /* RepositoryTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C68A28D95FB0001DA765 /* RepositoryTableViewDataSourceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +137,28 @@
 		7F4519AF28D4B0FC00EF437C /* Repository.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Repository.json; sourceTree = "<group>"; };
 		7F9AB99828D4B4EA002EE4A8 /* CachingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingController.swift; sourceTree = "<group>"; };
 		7F9AB99A28D4B515002EE4A8 /* FileSystemCacheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemCacheController.swift; sourceTree = "<group>"; };
+		7FB0C65E28D95A87001DA765 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
+		7FB0C66028D95AFE001DA765 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		7FB0C66228D95B5C001DA765 /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
+		7FB0C66428D95B64001DA765 /* Repository.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Repository.json; sourceTree = "<group>"; };
+		7FB0C66828D95C04001DA765 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		7FB0C66A28D95C0C001DA765 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		7FB0C66C28D95C12001DA765 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		7FB0C66E28D95C1C001DA765 /* SummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
+		7FB0C67028D95C36001DA765 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7FB0C67228D95C48001DA765 /* ProfileTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewDataSource.swift; sourceTree = "<group>"; };
+		7FB0C67428D95C53001DA765 /* User+ProfileViewController.Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+ProfileViewController.Section.swift"; sourceTree = "<group>"; };
+		7FB0C67628D95D10001DA765 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		7FB0C67828D95D1D001DA765 /* OwnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCell.swift; sourceTree = "<group>"; };
+		7FB0C67A28D95D24001DA765 /* ParentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentCell.swift; sourceTree = "<group>"; };
+		7FB0C67C28D95D2D001DA765 /* ReadmeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadmeCell.swift; sourceTree = "<group>"; };
+		7FB0C67E28D95D3A001DA765 /* CountersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountersCell.swift; sourceTree = "<group>"; };
+		7FB0C68028D95D43001DA765 /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		7FB0C68228D95D53001DA765 /* RepositoryNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryNameCell.swift; sourceTree = "<group>"; };
+		7FB0C68428D95D60001DA765 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
+		7FB0C68628D95D75001DA765 /* RepositoryTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewDataSource.swift; sourceTree = "<group>"; };
+		7FB0C68828D95F9F001DA765 /* ProfileTableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewDataSourceTests.swift; sourceTree = "<group>"; };
+		7FB0C68A28D95FB0001DA765 /* RepositoryTableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewDataSourceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +201,8 @@
 			children = (
 				7F126C8128D6BF2B00FF8302 /* Loader.swift */,
 				7F126C8328D6BF3300FF8302 /* Users */,
+				7FB0C66628D95BAF001DA765 /* Profile */,
+				7FB0C66728D95BB8001DA765 /* Repository */,
 				7F126C8A28D6BFF700FF8302 /* Repositories */,
 				7F126C9128D6C07900FF8302 /* Dummy data */,
 			);
@@ -172,6 +218,7 @@
 				7F126C9C28D6C17B00FF8302 /* UINavigationBar+Extension.swift */,
 				7F126C9D28D6C17B00FF8302 /* UITabBar+Extension.swift */,
 				7F126C9B28D6C17B00FF8302 /* UITableView+Extension.swift */,
+				7FB0C66028D95AFE001DA765 /* UITableViewCell+Extension.swift */,
 				7F126C9828D6C17A00FF8302 /* UIView+Extension.swift */,
 			);
 			path = "Protocols and extensions";
@@ -200,7 +247,9 @@
 		7F126C9128D6C07900FF8302 /* Dummy data */ = {
 			isa = PBXGroup;
 			children = (
+				7FB0C66228D95B5C001DA765 /* User.json */,
 				7F126C9328D6C09200FF8302 /* Users.json */,
+				7FB0C66428D95B64001DA765 /* Repository.json */,
 				7F126C9228D6C09200FF8302 /* Repositories.json */,
 			);
 			path = "Dummy data";
@@ -235,6 +284,7 @@
 				7F126C7E28D63B1F00FF8302 /* Core */,
 				7F126C7F28D6BEE900FF8302 /* Screens and navigation flow */,
 				7F126C8028D6BEFC00FF8302 /* Protocols and extensions */,
+				7FB0C65D28D95A6A001DA765 /* Custom Views */,
 				7F45197728D4A37F00EF437C /* Info.plist */,
 			);
 			path = Repositories;
@@ -249,6 +299,8 @@
 				7F126C7828D6370C00FF8302 /* CachingControllerTests.swift */,
 				7F126CA828D6C3A600FF8302 /* ArrayTableViewDataSourceTests.swift */,
 				7F126CA728D6C3A600FF8302 /* FileSystemCacheControllerTests.swift */,
+				7FB0C68828D95F9F001DA765 /* ProfileTableViewDataSourceTests.swift */,
+				7FB0C68A28D95FB0001DA765 /* RepositoryTableViewDataSourceTests.swift */,
 				7F9AB99728D4B4C2002EE4A8 /* Model Types */,
 				7F4519AB28D4B0BD00EF437C /* User.json */,
 				7F126CAE28D6C54800FF8302 /* Users.json */,
@@ -288,6 +340,44 @@
 				7F4519A728D4B02A00EF437C /* RepositoryTests.swift */,
 			);
 			path = "Model Types";
+			sourceTree = "<group>";
+		};
+		7FB0C65D28D95A6A001DA765 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				7FB0C65E28D95A87001DA765 /* PaddedLabel.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		7FB0C66628D95BAF001DA765 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7FB0C66828D95C04001DA765 /* AvatarCell.swift */,
+				7FB0C66A28D95C0C001DA765 /* DetailCell.swift */,
+				7FB0C66C28D95C12001DA765 /* ListCell.swift */,
+				7FB0C66E28D95C1C001DA765 /* SummaryCell.swift */,
+				7FB0C67028D95C36001DA765 /* ProfileViewController.swift */,
+				7FB0C67228D95C48001DA765 /* ProfileTableViewDataSource.swift */,
+				7FB0C67428D95C53001DA765 /* User+ProfileViewController.Section.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		7FB0C66728D95BB8001DA765 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7FB0C67628D95D10001DA765 /* DateCell.swift */,
+				7FB0C67828D95D1D001DA765 /* OwnerCell.swift */,
+				7FB0C67A28D95D24001DA765 /* ParentCell.swift */,
+				7FB0C67C28D95D2D001DA765 /* ReadmeCell.swift */,
+				7FB0C67E28D95D3A001DA765 /* CountersCell.swift */,
+				7FB0C68028D95D43001DA765 /* DescriptionCell.swift */,
+				7FB0C68228D95D53001DA765 /* RepositoryNameCell.swift */,
+				7FB0C68428D95D60001DA765 /* RepositoryViewController.swift */,
+				7FB0C68628D95D75001DA765 /* RepositoryTableViewDataSource.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +489,8 @@
 				7F126C9428D6C09200FF8302 /* Repositories.json in Resources */,
 				7F45197328D4A37F00EF437C /* Assets.xcassets in Resources */,
 				7F126C9528D6C09200FF8302 /* Users.json in Resources */,
+				7FB0C66528D95B64001DA765 /* Repository.json in Resources */,
+				7FB0C66328D95B5C001DA765 /* User.json in Resources */,
 				7F45197128D4A37E00EF437C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,27 +521,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB0C67F28D95D3A001DA765 /* CountersCell.swift in Sources */,
+				7FB0C67D28D95D2D001DA765 /* ReadmeCell.swift in Sources */,
+				7FB0C68128D95D43001DA765 /* DescriptionCell.swift in Sources */,
 				7F45199E28D4AE5E00EF437C /* Decoding.swift in Sources */,
+				7FB0C68528D95D60001DA765 /* RepositoryViewController.swift in Sources */,
 				7F126C8E28D6C03700FF8302 /* RepositoriesViewController.swift in Sources */,
+				7FB0C66F28D95C1C001DA765 /* SummaryCell.swift in Sources */,
+				7FB0C66B28D95C0C001DA765 /* DetailCell.swift in Sources */,
 				7F126C8C28D6C02000FF8302 /* RepositoryCell.swift in Sources */,
 				7F126C8728D6BF9F00FF8302 /* UsersViewController.swift in Sources */,
+				7FB0C66928D95C04001DA765 /* AvatarCell.swift in Sources */,
+				7FB0C67728D95D10001DA765 /* DateCell.swift in Sources */,
 				7F45196A28D4A37E00EF437C /* AppDelegate.swift in Sources */,
+				7FB0C67B28D95D24001DA765 /* ParentCell.swift in Sources */,
 				7F126CA328D6C17B00FF8302 /* UITabBar+Extension.swift in Sources */,
 				7F126C9028D6C05700FF8302 /* RepositoriesTableViewDataSource.swift in Sources */,
 				7F45199A28D4AC9D00EF437C /* User.swift in Sources */,
 				7F126C8228D6BF2B00FF8302 /* Loader.swift in Sources */,
 				7F126CA228D6C17B00FF8302 /* UINavigationBar+Extension.swift in Sources */,
+				7FB0C67128D95C36001DA765 /* ProfileViewController.swift in Sources */,
 				7F126CA028D6C17B00FF8302 /* UIColor+Extension.swift in Sources */,
+				7FB0C65F28D95A87001DA765 /* PaddedLabel.swift in Sources */,
 				7F45199C28D4ACBE00EF437C /* Repository.swift in Sources */,
 				7F4519A028D4AE7300EF437C /* ModelTypes.swift in Sources */,
+				7FB0C67528D95C53001DA765 /* User+ProfileViewController.Section.swift in Sources */,
+				7FB0C67328D95C48001DA765 /* ProfileTableViewDataSource.swift in Sources */,
+				7FB0C67928D95D1D001DA765 /* OwnerCell.swift in Sources */,
 				7F126C9728D6C15C00FF8302 /* ArrayTableViewDataSource+Extension.swift in Sources */,
 				7F126C8928D6BFDC00FF8302 /* UsersTableViewDataSource.swift in Sources */,
 				7F9AB99928D4B4EA002EE4A8 /* CachingController.swift in Sources */,
 				7F9AB99B28D4B515002EE4A8 /* FileSystemCacheController.swift in Sources */,
 				7F126C8528D6BF6000FF8302 /* UserCell.swift in Sources */,
+				7FB0C66128D95AFE001DA765 /* UITableViewCell+Extension.swift in Sources */,
 				7F126C9F28D6C17B00FF8302 /* Date+Extension.swift in Sources */,
 				7F126C9E28D6C17B00FF8302 /* UIView+Extension.swift in Sources */,
+				7FB0C66D28D95C12001DA765 /* ListCell.swift in Sources */,
+				7FB0C68728D95D75001DA765 /* RepositoryTableViewDataSource.swift in Sources */,
 				7F126C7D28D63AFF00FF8302 /* NetworkController.swift in Sources */,
+				7FB0C68328D95D53001DA765 /* RepositoryNameCell.swift in Sources */,
 				7F126CA128D6C17B00FF8302 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,11 +570,13 @@
 			files = (
 				7F4519A628D4B00E00EF437C /* UserTests.swift in Sources */,
 				7F4519A228D4AFD600EF437C /* FetchableValueTests.swift in Sources */,
+				7FB0C68928D95F9F001DA765 /* ProfileTableViewDataSourceTests.swift in Sources */,
 				7F126CAD28D6C3A600FF8302 /* ArrayTableViewDataSourceTests.swift in Sources */,
 				7F4519A428D4AFEB00EF437C /* URLTests.swift in Sources */,
 				7F4519AA28D4B04500EF437C /* Helpers.swift in Sources */,
 				7F4519A828D4B02A00EF437C /* RepositoryTests.swift in Sources */,
 				7F126CAC28D6C3A600FF8302 /* FileSystemCacheControllerTests.swift in Sources */,
+				7FB0C68B28D95FB0001DA765 /* RepositoryTableViewDataSourceTests.swift in Sources */,
 				7F126C7928D6370C00FF8302 /* CachingControllerTests.swift in Sources */,
 				7F126CA928D6C3A600FF8302 /* RepositoryCellTests.swift in Sources */,
 				7F126CAB28D6C3A600FF8302 /* DateTests.swift in Sources */,

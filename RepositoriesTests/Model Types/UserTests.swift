@@ -18,7 +18,7 @@ class UserTests: XCTestCase {
         }
         XCTAssertEqual(details.publicRepositoriesCount, 2)
         XCTAssertEqual(details.followersCount, 20)
-        XCTAssertEqual(details.followingCount, 0)
+        XCTAssertEqual(details.followingCount, 15)
         XCTAssertEqual(details.name, "monalisa octocat")
         XCTAssertEqual(details.company, "GitHub")
         XCTAssertEqual(details.location, "San Francisco")
