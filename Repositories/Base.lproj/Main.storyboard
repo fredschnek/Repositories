@@ -181,8 +181,10 @@
                                                 <constraint firstItem="dZX-LQ-drL" firstAttribute="trailing" secondItem="MCG-6R-SwE" secondAttribute="trailing" id="VPR-lp-69m"/>
                                                 <constraint firstItem="MCG-6R-SwE" firstAttribute="centerY" secondItem="51F-4X-mmA" secondAttribute="centerY" id="VcP-Pi-Xjk"/>
                                                 <constraint firstItem="Szf-fq-6Ym" firstAttribute="top" secondItem="ZZn-tm-VtJ" secondAttribute="top" constant="24" id="Vdb-g2-VS6"/>
+                                                <constraint firstItem="VRA-cb-Gmv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="s78-Lj-3oE" secondAttribute="trailing" constant="8" symbolic="YES" id="ZHU-FT-0RP"/>
                                                 <constraint firstItem="dZX-LQ-drL" firstAttribute="leading" secondItem="N85-iu-ykK" secondAttribute="leading" id="fi2-8j-AxV"/>
                                                 <constraint firstItem="sNi-hm-HY5" firstAttribute="leading" secondItem="VRA-cb-Gmv" secondAttribute="trailing" constant="8" id="fsq-oQ-rhB"/>
+                                                <constraint firstItem="51F-4X-mmA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sNi-hm-HY5" secondAttribute="trailing" constant="8" symbolic="YES" id="h90-hm-74d"/>
                                                 <constraint firstAttribute="bottom" secondItem="dZX-LQ-drL" secondAttribute="bottom" constant="24.5" id="hlP-En-11J"/>
                                                 <constraint firstItem="51F-4X-mmA" firstAttribute="centerY" secondItem="sNi-hm-HY5" secondAttribute="centerY" id="nFn-Ja-PFI"/>
                                                 <constraint firstItem="51F-4X-mmA" firstAttribute="leading" secondItem="ZZn-tm-VtJ" secondAttribute="leading" constant="208" id="sho-B9-Wll"/>
@@ -817,7 +819,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNw-rh-bni" customClass="PaddedButton" customModule="Repositories" customModuleProvider="target">
-                                                    <rect key="frame" x="146.5" y="83" width="82" height="27"/>
+                                                    <rect key="frame" x="132.5" y="81" width="110" height="31"/>
                                                     <color key="backgroundColor" name="Medium Carmine"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <state key="normal" title="Change photo">
@@ -892,6 +894,7 @@
                                                 <constraint firstItem="bQQ-y2-wpZ" firstAttribute="top" secondItem="rQY-by-Jtn" secondAttribute="top" constant="16" id="4cf-oF-hYx"/>
                                                 <constraint firstAttribute="trailing" secondItem="bQQ-y2-wpZ" secondAttribute="trailing" constant="24" id="Khz-Ik-2Kg"/>
                                                 <constraint firstItem="Uci-dN-3F3" firstAttribute="leading" secondItem="rQY-by-Jtn" secondAttribute="leading" constant="24" id="XON-TL-RJn"/>
+                                                <constraint firstItem="bQQ-y2-wpZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Uci-dN-3F3" secondAttribute="trailing" constant="8" symbolic="YES" id="ctt-2I-0nI"/>
                                                 <constraint firstItem="DBf-15-kv0" firstAttribute="baseline" secondItem="Uci-dN-3F3" secondAttribute="baseline" id="el4-BL-xeS"/>
                                                 <constraint firstAttribute="bottom" secondItem="bQQ-y2-wpZ" secondAttribute="bottom" constant="16" id="qO8-ir-Wmo"/>
                                             </constraints>
@@ -930,6 +933,7 @@
                                                 <constraint firstItem="lZR-6T-dfZ" firstAttribute="leading" secondItem="1Gr-bH-TsM" secondAttribute="leading" id="P9x-IN-YZI"/>
                                                 <constraint firstItem="lZR-6T-dfZ" firstAttribute="top" secondItem="1Gr-bH-TsM" secondAttribute="bottom" constant="8" id="SzI-L6-dwe"/>
                                                 <constraint firstAttribute="bottom" secondItem="lZR-6T-dfZ" secondAttribute="bottom" constant="16.5" id="yV3-dw-DJq"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Gr-bH-TsM" secondAttribute="trailing" constant="20" symbolic="YES" id="ys2-HT-ZNZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1139,7 +1143,7 @@
             <size key="intrinsicContentSize" width="32" height="20.5"/>
         </designable>
         <designable name="pNw-rh-bni">
-            <size key="intrinsicContentSize" width="82" height="27"/>
+            <size key="intrinsicContentSize" width="110" height="31"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

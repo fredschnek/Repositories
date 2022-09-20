@@ -10,7 +10,8 @@ import XCTest
 
 fileprivate typealias Policy = CachingController.CachingPolicy
 
-// MARK: CachingControllerCackingPolicyTests
+// MARK: - CachingControllerCachingPolicyTests
+
 class CachingControllerCachingPolicyTests: XCTestCase {
     let storedValue = StoredValue(value: 5, date: Date(string: "26/07/2017 12:40:00")!)
     
@@ -54,3 +55,81 @@ class CachingControllerCachingPolicyTests: XCTestCase {
     }
 }
 
+// MARK: - CachingControllerTests
+
+class CachingControllerTests: XCTestCase {
+    var mock: MockCache!
+    var controller: CachingController!
+    
+    override func setUp() {
+        mock = MockCache()
+        controller = CachingController()
+        controller.cacheController = mock
+    }
+    
+    func testValidValue() {
+        mock.storedValue = StoredValue(value: 5, date: Date())
+        guard let cachedValue: CachedValue<Int> = controller.fetchValue(for: mock.url) else {
+            XCTFail(" The caching controller does not return the stored value ")
+            return
+        }
+        XCTAssertFalse(cachedValue.isStale)
+        XCTAssertEqual(cachedValue.value, 5)
+    }
+    
+    func testExpiredValue() {
+        let expiredDate = Date(timeIntervalSinceNow: -CachingController.CachingPolicy.expirationTime)
+        let storedValue = StoredValue(value: 5, date: expiredDate)
+        mock.storedValue = storedValue
+        guard let cachedValue: CachedValue<Int> = controller.fetchValue(for: mock.url) else {
+            XCTFail(" The caching controller does not return the stored value ")
+            return
+        }
+        XCTAssert(cachedValue.isStale)
+        XCTAssertEqual(cachedValue.value, 5)
+    }
+    
+    func testCacheMiss() {
+        mock.storedValue = nil
+        let cachedValue: CachedValue<Int>? = controller.fetchValue(for: mock.url)
+        XCTAssertNil(cachedValue)
+    }
+    
+    func testStoring() {
+        controller.store(value: 5, for: mock.url)
+        XCTAssert(mock.valueWasStored)
+        XCTAssert(mock.valueWasRemoved)
+    }
+}
+
+// MARK: - MockCache
+
+class MockCache {
+    let url = URL(string: "www.test.com/value")!
+    let valueSize = CachingController.CachingPolicy.maximumCacheSize + 1
+    var storedValue: StoredValue<Int>?
+    private (set) var valueWasRemoved = false
+    private (set) var valueWasStored = false
+}
+
+extension MockCache: Caching {
+    func fetchValue<T: Decodable>(for url: URL) -> StoredValue<T>? {
+        return storedValue as? StoredValue
+    }
+    
+    func store<T>(value: T, for url: URL) where T : Encodable {
+        valueWasStored = true
+    }
+    
+    func removeValue(for url: URL) {
+        valueWasRemoved = true
+    }
+    
+    var cacheSize: Bytes {
+        return valueWasRemoved ? 0 : valueSize
+    }
+    
+    var entries: [StoredEntry] {
+        return [StoredEntry(url: url, date: Date(), size: valueSize)]
+    }
+}

@@ -12,8 +12,16 @@ struct CachedValue<T> {
     let isStale: Bool
 }
 
+protocol Caching {
+    var cacheSize: Bytes { get }
+    var entries: [StoredEntry] { get }
+    func fetchValue<T: Decodable>(for url: URL) -> StoredValue<T>?
+    func store<T: Encodable>(value: T, for url: URL)
+    func removeValue(for url: URL)
+}
+
 class CachingController {
-    let cacheController = FileSystemCacheController()
+    var cacheController: Caching = FileSystemCacheController()
     
     func fetchValue<V: Decodable>(for url: URL) -> CachedValue<V>? {
         let storedValue: StoredValue<V>? = cacheController.fetchValue(for: url)
@@ -37,14 +45,12 @@ class CachingController {
 }
 
 // MARK: - StoredValue
-
 struct StoredValue<T> {
     let value: T
     let date: Date
 }
 
 // MARK: - StoredEntry
-
 struct StoredEntry {
     let url: URL
     let date: Date
@@ -52,7 +58,6 @@ struct StoredEntry {
 }
 
 // MARK: - CachingPolicy
-
 extension CachingController {
     struct CachingPolicy {
         static let expirationTime: TimeInterval = 60 * 10
