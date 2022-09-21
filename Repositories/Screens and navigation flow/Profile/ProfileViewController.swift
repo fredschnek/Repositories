@@ -33,8 +33,8 @@ class ProfileViewController: UIViewController, MainCoordinated, UsersCoordinated
         guard let url = user?.url else {
             return
         }
-        networkController?.fetchValue(for: url) { [weak self] user in
-            user.map { self?.update(user: $0) }
+        networkController?.fetchValue(for: url) { [weak self] result in
+            (try? result.get()).map { self?.update(user: $0) }
         }
     }
     
@@ -117,8 +117,8 @@ private extension ProfileViewController {
         self.user?.value = .fetched(value: user)
         setUpDataSource(with: user)
         editButton.isEnabled = true
-        networkController?.fetchImage(for: user.avatar.url) { [weak self] avatar in
-            avatar.map { self?.update(avatar:$0) }
+        networkController?.fetchImage(for: user.avatar.url) { [weak self] result in
+            (try? result.get()).map { self?.update(avatar:$0) }
         }
     }
     

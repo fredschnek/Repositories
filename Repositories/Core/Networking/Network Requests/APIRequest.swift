@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - APIRequest
 
-protocol APIRequest: NetworkRequest {
+protocol APIRequest: NetworkRequest, Validable {
     var url: URL { get }
     var accessToken: String { get }
 }
@@ -20,6 +20,12 @@ extension APIRequest {
         request.addValue("token \(accessToken)", forHTTPHeaderField: "Authorization")
         request.addValue("Repositories", forHTTPHeaderField: "User-Agent")
         return request
+    }
+    
+    func validate(_ response: HTTPURLResponse) throws{
+        if response.statusCode == 401 {
+            throw NetworkError.unauthorized
+        }
     }
 }
 
@@ -120,7 +126,6 @@ class StatusRequest: APIRequest, HTTPStatusRequest {
         self.accessToken = accessToken
         self.session = session
     }
-    
 }
 
 extension StatusRequest: NetworkRequest {

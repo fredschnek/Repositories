@@ -16,15 +16,18 @@ class MainTabBarController: UITabBarController, Networked, MainCoordinated, Logi
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         guard case .notFetched = root.value else {
             return
         }
+        
         guard (networkController?.isClientAuthenticated ?? true) else {
             loginCoordinator?.mainViewControllerRequiresAuthentication(self, isAppLaunch: true)
             return
         }
-        networkController?.fetchValue(for: GitHubEndpoint.apiRootURL) { [weak self] (root: GitHubRoot?) in
-            if let root = root, let strongSelf = self {
+        
+        networkController?.fetchValue(for: GitHubEndpoint.apiRootURL) { [weak self] (result: Result<GitHubRoot>) in
+            if let root = try? result.get(), let strongSelf = self {
                 strongSelf.root.value = .fetched(value: root)
                 strongSelf.mainCoordinator?.mainViewController(strongSelf, didLoadGitHubRoot: root)
             }
@@ -35,4 +38,3 @@ class MainTabBarController: UITabBarController, Networked, MainCoordinated, Logi
         loginCoordinator?.configure(viewController: segue.destination)
     }
 }
-

@@ -78,6 +78,20 @@ extension ProfileTableViewDataSource {
         func row(at indexPath: IndexPath) -> RowType {
             return sections[indexPath.section].rows[indexPath.row]
         }
+        
+        func indexPath(for row: RowType) -> IndexPath {
+            for (sectionIndex, section) in sections.enumerated() {
+                for (rowIndex, sectionRow) in section.rows.enumerated() {
+                    typealias Section = ProfileViewController.Section
+                    if row as? Section.SummaryRow == sectionRow as? Section.SummaryRow
+                        || row as? Section.DetailRow == sectionRow as? Section.DetailRow
+                        || row as? Section.ListRow == sectionRow as? Section.ListRow {
+                        return IndexPath(row: rowIndex, section: sectionIndex)
+                    }
+                }
+            }
+            fatalError("Row not present")
+        }
     }
 }
 

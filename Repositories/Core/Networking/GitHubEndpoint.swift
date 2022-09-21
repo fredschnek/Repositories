@@ -41,6 +41,13 @@ struct GitHubEndpoint {
         ]
         return urlComponents.url!
     }
+    
+    static func followURL(for user: User) -> URL {
+        return apiRootURL
+            .appendingPathComponent("user")
+            .appendingPathComponent("following")
+            .appendingPathComponent(user.login)
+    }
 }
 
 // MARK: - URL
@@ -68,7 +75,7 @@ extension URL {
 struct GitHubRoot: Decodable {
     enum CodingKeys: String, CodingKey {
         case user = "current_user_url"
-        case repositories = "repository_url"
+        case repositories = "current_user_repositories_url"
         case stars = "starred_url"
         case followers = "followers_url"
         case following = "following_url"

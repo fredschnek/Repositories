@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Repositories
+
+  Created by Frederico Schnekenberg on 21/09/22.
+  
+*/
+
+"NetworkRequest.Error.Unrecoverable.Title" = "Oops, something went wrong";
+"NetworkRequest.Error.Unreachable.Title" = "Service unreachable";
+"NetworkRequest.Error.Unauthorized.Title" = "Unauthorized";
+"NetworkRequest.Error.Temporary.Title" = "Service unavailable";
+
+"NetworkRequest.Error.Unrecoverable.Recovery" = "Please make sure you have the latest version of the app.";
+"NetworkRequest.Error.Unreachable.Recovery" = "Please check your internet connection and try again.";
+"NetworkRequest.Error.Unauthorized.Recovery" = "Please try logging in again";
+"NetworkRequest.Error.Temporary.Recovery" = "There seems to be a problem with the remote server. Please retry later.";

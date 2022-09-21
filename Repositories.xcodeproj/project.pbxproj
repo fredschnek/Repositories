@@ -65,6 +65,9 @@
 		7F4519AC28D4B0BD00EF437C /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F4519AB28D4B0BD00EF437C /* User.json */; };
 		7F4519AE28D4B0E600EF437C /* PartialUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F4519AD28D4B0E600EF437C /* PartialUser.json */; };
 		7F4519B028D4B0FC00EF437C /* Repository.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F4519AF28D4B0FC00EF437C /* Repository.json */; };
+		7F84656928DBA94A00D77538 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84656828DBA94A00D77538 /* NetworkError.swift */; };
+		7F84656B28DBA9F100D77538 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84656A28DBA9F100D77538 /* Result.swift */; };
+		7F84657528DBB12900D77538 /* NetworkError.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F84657728DBB12900D77538 /* NetworkError.strings */; };
 		7F9AB99928D4B4EA002EE4A8 /* CachingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AB99828D4B4EA002EE4A8 /* CachingController.swift */; };
 		7F9AB99B28D4B515002EE4A8 /* FileSystemCacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AB99A28D4B515002EE4A8 /* FileSystemCacheController.swift */; };
 		7FB0C66128D95AFE001DA765 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0C66028D95AFE001DA765 /* UITableViewCell+Extension.swift */; };
@@ -161,9 +164,7 @@
 		7F32E7BC28D9E22D004BA680 /* NetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestTests.swift; sourceTree = "<group>"; };
 		7F45196628D4A37E00EF437C /* Repositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Repositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F45196928D4A37E00EF437C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7F45197028D4A37E00EF437C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F45197228D4A37F00EF437C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7F45197528D4A37F00EF437C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F45197728D4A37F00EF437C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F45197C28D4A37F00EF437C /* RepositoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepositoriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F45198628D4A37F00EF437C /* RepositoriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepositoriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +180,11 @@
 		7F4519AB28D4B0BD00EF437C /* User.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
 		7F4519AD28D4B0E600EF437C /* PartialUser.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PartialUser.json; sourceTree = "<group>"; };
 		7F4519AF28D4B0FC00EF437C /* Repository.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Repository.json; sourceTree = "<group>"; };
+		7F84656828DBA94A00D77538 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		7F84656A28DBA9F100D77538 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7F84657028DBB06D00D77538 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7F84657228DBB07500D77538 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7F84657628DBB12900D77538 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NetworkError.strings; sourceTree = "<group>"; };
 		7F9AB99828D4B4EA002EE4A8 /* CachingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingController.swift; sourceTree = "<group>"; };
 		7F9AB99A28D4B515002EE4A8 /* FileSystemCacheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemCacheController.swift; sourceTree = "<group>"; };
 		7FB0C66028D95AFE001DA765 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
@@ -336,6 +342,7 @@
 		7F32E7B028D9E125004BA680 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				7F84656A28DBA9F100D77538 /* Result.swift */,
 				7F32E7B128D9E13E004BA680 /* GitHubEndpoint.swift */,
 				7F126C7C28D63AFF00FF8302 /* NetworkController.swift */,
 				7F32E7B328D9E163004BA680 /* Network Requests */,
@@ -346,10 +353,12 @@
 		7F32E7B328D9E163004BA680 /* Network Requests */ = {
 			isa = PBXGroup;
 			children = (
+				7F84657728DBB12900D77538 /* NetworkError.strings */,
 				7F32E7BA28D9E19F004BA680 /* APIRequest.swift */,
 				7F32E7B628D9E190004BA680 /* ImageRequest.swift */,
 				7F32E7B428D9E186004BA680 /* NetworkRequest.swift */,
 				7F32E7B828D9E197004BA680 /* AccessTokenRequest.swift */,
+				7F84656828DBA94A00D77538 /* NetworkError.swift */,
 			);
 			path = "Network Requests";
 			sourceTree = "<group>";
@@ -600,6 +609,7 @@
 				7F45197328D4A37F00EF437C /* Assets.xcassets in Resources */,
 				7F32E7A828D9DD90004BA680 /* Users.storyboard in Resources */,
 				7F126C9528D6C09200FF8302 /* Users.json in Resources */,
+				7F84657528DBB12900D77538 /* NetworkError.strings in Resources */,
 				7FB0C66528D95B64001DA765 /* Repository.json in Resources */,
 				7FB0C66328D95B5C001DA765 /* User.json in Resources */,
 				7F32E7A628D9DD78004BA680 /* Repositories.storyboard in Resources */,
@@ -688,10 +698,12 @@
 				7FB0C66D28D95C12001DA765 /* ListCell.swift in Sources */,
 				7F11AB0228DB58890013AC41 /* UIStoryboardSegue.swift in Sources */,
 				7FB0C68728D95D75001DA765 /* RepositoryTableViewDataSource.swift in Sources */,
+				7F84656B28DBA9F100D77538 /* Result.swift in Sources */,
 				7F32E7AD28D9DE51004BA680 /* UsersFlowCoordinator.swift in Sources */,
 				7F126C7D28D63AFF00FF8302 /* NetworkController.swift in Sources */,
 				7FB0C68328D95D53001DA765 /* RepositoryNameCell.swift in Sources */,
 				7F32E7B928D9E197004BA680 /* AccessTokenRequest.swift in Sources */,
+				7F84656928DBA94A00D77538 /* NetworkError.swift in Sources */,
 				7F126CA128D6C17B00FF8302 /* UITableView+Extension.swift in Sources */,
 				7F32E7AF28D9DFAE004BA680 /* StateController.swift in Sources */,
 			);
@@ -745,7 +757,7 @@
 		7F45196F28D4A37E00EF437C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7F45197028D4A37E00EF437C /* Base */,
+				7F84657228DBB07500D77538 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -753,9 +765,17 @@
 		7F45197428D4A37F00EF437C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7F45197528D4A37F00EF437C /* Base */,
+				7F84657028DBB06D00D77538 /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7F84657728DBB12900D77538 /* NetworkError.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F84657628DBB12900D77538 /* en */,
+			);
+			name = NetworkError.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

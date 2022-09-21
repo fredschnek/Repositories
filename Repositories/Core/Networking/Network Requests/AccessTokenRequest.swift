@@ -37,11 +37,13 @@ extension AccessTokenRequest: JSONDataRequest {
         request.httpBody = parameters.data(using: .utf8)
         return request
     }
+    
+    func validate(_ response: HTTPURLResponse) throws { return }
 }
 
 // MARK: - AuthorizationResponse
 
-struct Authorization: Decodable{
+struct Authorization: Decodable {
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
     }

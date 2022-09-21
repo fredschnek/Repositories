@@ -65,6 +65,94 @@
             </objects>
             <point key="canvasLocation" x="-1968" y="3043"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="SHF-md-U61">
+            <objects>
+                <viewController id="k22-rR-rvR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BzN-OJ-pz2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clM-P8-UrF">
+                                <rect key="frame" x="0.0" y="598" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem enabled="NO" title="Profile" image="User" selectedImage="Profile" id="coC-Nb-GbD"/>
+                                    <tabBarItem enabled="NO" title="Repositories" image="Repository" id="esP-ec-bwK"/>
+                                    <tabBarItem enabled="NO" title="Stars" image="Star" id="VeZ-1V-d3l"/>
+                                    <tabBarItem enabled="NO" title="Followers" image="Followers" id="SeT-eF-9cx"/>
+                                    <tabBarItem enabled="NO" title="Following" image="Following" id="qxx-1j-rGp"/>
+                                </items>
+                                <color key="barTintColor" name="Rose White"/>
+                                <color key="selectedImageTintColor" name="Medium Carmine"/>
+                            </tabBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Yj8-67-REY">
+                                <rect key="frame" x="24" y="266" width="327" height="115.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There was a problem with the network or the remote server" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mf-gO-zrO">
+                                        <rect key="frame" x="19.5" y="0.0" width="288" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                        <color key="textColor" name="Cork"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ef-HP-b04" customClass="PaddedButton" customModule="Repositories" customModuleProvider="target">
+                                        <rect key="frame" x="34.5" y="57.5" width="258" height="58"/>
+                                        <color key="backgroundColor" name="Medium Carmine"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="258" id="n3Z-S9-qH8"/>
+                                            <constraint firstAttribute="height" constant="58" id="wuy-KM-hiu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <state key="normal" title="Retry">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="29"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="login:" destination="AHq-sg-ucL" eventType="touchUpInside" id="ERG-9H-BUg"/>
+                                            <segue destination="avF-k1-5tY" kind="unwind" unwindAction="retry:" id="dMS-rh-ROH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qJL-Pd-f8x"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="clM-P8-UrF" firstAttribute="leading" secondItem="qJL-Pd-f8x" secondAttribute="leading" id="2fV-PN-QhU"/>
+                            <constraint firstItem="Yj8-67-REY" firstAttribute="centerY" secondItem="BzN-OJ-pz2" secondAttribute="centerY" id="DyB-tr-0y2"/>
+                            <constraint firstItem="clM-P8-UrF" firstAttribute="bottom" secondItem="qJL-Pd-f8x" secondAttribute="bottom" id="MBQ-FW-Awo"/>
+                            <constraint firstItem="Yj8-67-REY" firstAttribute="leading" secondItem="qJL-Pd-f8x" secondAttribute="leading" constant="24" id="MfZ-hf-zfP"/>
+                            <constraint firstAttribute="trailing" secondItem="Yj8-67-REY" secondAttribute="trailing" constant="24" id="Psm-4K-F2C"/>
+                            <constraint firstItem="clM-P8-UrF" firstAttribute="trailing" secondItem="qJL-Pd-f8x" secondAttribute="trailing" id="mYT-WN-t7D"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="nEH-GB-iG8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdp-zj-7LT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="avF-k1-5tY" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="144.80000000000001" y="1683.5082458770617"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ioP-0s-bfm">
+            <objects>
+                <navigationController id="EKf-y0-xbJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C6N-Uu-W1c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="k22-rR-rvR" kind="relationship" relationship="rootViewController" id="dBL-nP-4Eo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ors-JE-OHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-722" y="1684"/>
+        </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="dlD-NR-F5d">
             <objects>
@@ -82,6 +170,7 @@
                         <segue destination="tj7-w6-BN9" kind="relationship" relationship="viewControllers" id="egH-28-nWW"/>
                         <segue destination="AL1-DV-duP" kind="relationship" relationship="viewControllers" id="G4S-08-XVh"/>
                         <segue destination="soM-4U-v7p" kind="relationship" relationship="viewControllers" id="TQp-Wh-oGc"/>
+                        <segue destination="EKf-y0-xbJ" kind="presentation" identifier="ShowRetry" animates="NO" modalTransitionStyle="crossDissolve" id="YV0-QP-7pf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiX-iO-JW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -128,7 +217,7 @@
                                                 <color key="backgroundColor" name="Medium Carmine"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="58" id="4ZC-RG-bZK"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="258" id="8ov-45-585"/>
+                                                    <constraint firstAttribute="width" constant="258" id="8ov-45-585"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <state key="normal" title="Log in to GitHub.com">
@@ -201,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5K-86-5UJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-668" y="1684"/>
+            <point key="canvasLocation" x="-1594" y="930"/>
         </scene>
         <!--Followers-->
         <scene sceneID="704-TR-BJn">
@@ -249,18 +338,22 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="9Ef-HP-b04">
+            <size key="intrinsicContentSize" width="49" height="36"/>
+        </designable>
         <designable name="ggb-w9-7lE">
             <size key="intrinsicContentSize" width="189" height="36"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="FAR-z5-Kod"/>
-        <segue reference="H27-jC-LrA"/>
+        <segue reference="hRO-Im-V2V"/>
+        <segue reference="lDs-X0-5TD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Followers" width="30" height="30"/>
         <image name="Following" width="30" height="30"/>
         <image name="GitHub Logo" width="160" height="160"/>
+        <image name="Profile" width="30" height="30"/>
         <image name="Repository" width="30" height="30"/>
         <image name="Star" width="30" height="30"/>
         <image name="User" width="30" height="30"/>

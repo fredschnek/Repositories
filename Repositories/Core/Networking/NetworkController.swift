@@ -27,74 +27,91 @@ class NetworkController {
         return accessToken != nil
     }
     
-    func authenticateWith(authorizationCode: String, state: String, completion: @escaping () -> Void) {
+    func authenticateWith(authorizationCode: String, state: String, completion: @escaping (Result<Void>) -> Void) {
         let accessTokenRequest = AccessTokenRequest(authorizationCode: authorizationCode, state: state)
         let requestURL = accessTokenRequest.urlRequest.url!
         requests[requestURL] = accessTokenRequest
-        accessTokenRequest.execute { (authorization) in
-            if let accessToken = authorization?.accessToken {
-                self.keychainController.store(accessToken: accessToken)
+        accessTokenRequest.execute { [weak self] (result) in
+            self?.requests[requestURL] = nil
+            let result = Result {
+                let authorization = try result.get()
+                self?.keychainController.store(accessToken: authorization.accessToken)
             }
-            self.requests[requestURL] = nil
-            completion()
+            completion(result)
         }
     }
     
-    func fetchImage(for url: URL, withCompletion completion: @escaping (UIImage?) -> Void) {
+    func fetchImage(for url: URL, withCompletion completion: @escaping (Result<UIImage>) -> Void) {
         let imageRequest = ImageRequest(url: url, session: session)
         requests[url] = imageRequest
-        imageRequest.execute { [weak self] image in
+        imageRequest.execute { [weak self] result in
             self?.requests[url] = nil
-            completion(image)
+            completion(result)
         }
     }
     
-    func fetchValue<V: Decodable>(for url: URL, withCompletion completion: @escaping (V?) -> Void) {
+    func fetchValue<V: Decodable>(for url: URL, withCompletion completion: @escaping (Result<V>) -> Void) {
         guard let accessToken = accessToken else {
-            completion(nil)
+            completion(.failure(NetworkError.unauthorized))
             return
         }
         let apiRequest = FetchRequest<V>(url: url, accessToken: accessToken, session: session)
         requests[url] = apiRequest
-        apiRequest.execute { [weak self] value in
-            completion(value)
+        apiRequest.execute { [weak self] result in
+            completion(result)
             self?.requests[url] = nil
         }
     }
     
-    func fetchValue<V: Codable>(for url: URL, withCompletion completion: @escaping (V?) -> Void) {
-        let cachedValue: CachedValue<V>? = cachingController.fetchValue(for: url)
-        if let cachedValue = cachedValue, !cachedValue.isStale {
-            completion(cachedValue.value)
-            return
-        }
+    func submit<V: Encodable, U: Decodable>(value: V, toURL url: URL, withCompletion completion: @escaping (Result<U>) -> Void) {
         guard let accessToken = accessToken else {
-            completion(cachedValue?.value)
-            return
-        }
-        let apiRequest = FetchRequest<V>(url: url, accessToken: accessToken, session: session)
-        requests[url] = apiRequest
-        apiRequest.execute { [weak self] value in
-            self?.requests[url] = nil
-            guard let value = value else {
-                completion(cachedValue?.value)
-                return
-            }
-            self?.cachingController.store(value: value, for: url)
-            completion(value)
-        }
-    }
-    
-    func submit<V: Encodable, U: Decodable>(value: V, toURL url: URL, withCompletion completion: @escaping (U?) -> Void) {
-        guard let accessToken = accessToken else {
-            completion(nil)
+            completion(.failure(NetworkError.unauthorized))
             return
         }
         let updateRequest = UpdateRequest<V, U>(url: url, accessToken: accessToken, session: session, value: value)
         requests[url] = updateRequest
-        updateRequest.execute { [weak self] value in
+        updateRequest.execute { [weak self] result in
             self?.requests[url] = nil
-            completion(value)
+            completion(result)
+        }
+    }
+    
+    func checkStatus(for url: URL, withCompletion completion: @escaping (Result<Bool>) -> Void) {
+        guard let accessToken = accessToken else {
+            completion(.failure(NetworkError.unauthorized))
+            return
+        }
+        let statusRequest = StatusRequest(url: url, accessToken: accessToken, session: session)
+        requests[url] = statusRequest
+        statusRequest.execute { [weak self] result in
+            self?.requests[url] = nil
+            completion(result)
+        }
+    }
+    
+    func toggle(status: Bool, forURL url: URL, withCompletion completion: @escaping (Result<Bool>) -> Void) {
+        guard let accessToken = accessToken else {
+            completion(.failure(NetworkError.unauthorized))
+            return
+        }
+        let toggleRequest = ToggleRequest(url: url, accessToken: accessToken, session: session, isChecked: status)
+        requests[url] = toggleRequest
+        toggleRequest.execute { [weak self] result in
+            self?.requests[url] = nil
+            completion(result)
+        }
+    }
+    
+    func fetchList<A: Decodable & ArrayType>(for url: URL, page: Int, withCompletion completion: @escaping (Result<A>) -> Void) {
+        guard let accessToken = accessToken else {
+            completion(.failure(NetworkError.unauthorized))
+            return
+        }
+        let listRequest = ListRequest<A>(url: url, accessToken: accessToken, session: session, page: page)
+        requests[url] = listRequest
+        listRequest.execute { [weak self] result in
+            self?.requests[url] = nil
+            completion(result)
         }
     }
     

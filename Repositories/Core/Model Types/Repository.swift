@@ -15,7 +15,7 @@ struct Repository: RepositoryType {
     let isFork: Bool
     let forksCount: Int
     let stargazersCount: Int
-    let owner: User
+    var owner: User
     let updateDate: Date
     let description: String?
     let language: String?

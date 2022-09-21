@@ -27,7 +27,7 @@ class LoginViewController: UIViewController, LoginCoordinated, Networked {
     
     func performAuthorization(with authorizationCode: String) {
         isAuthenticating = true
-        networkController?.authenticateWith(authorizationCode: authorizationCode, state: state) { [weak self] in
+        networkController?.authenticateWith(authorizationCode: authorizationCode, state: state) { [weak self] _ in
             self?.loginCoordinator?.loginViewControllerDidFinishAuthorization()
         }
     }

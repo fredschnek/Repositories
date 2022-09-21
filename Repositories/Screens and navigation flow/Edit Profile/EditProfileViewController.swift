@@ -31,7 +31,8 @@ class EditProfileViewController: UIViewController, UsersCoordinated, Networked {
         guard let dataSource = dataSource else {
             return
         }
-        networkController?.submit(value: dataSource.userUpdate, toURL: GitHubEndpoint.updateUserURL, withCompletion: { [weak self] (updatedUser: User?) in
+        networkController?.submit(value: dataSource.userUpdate, toURL: GitHubEndpoint.updateUserURL, withCompletion: { [weak self] (result: Result<User>) in
+            let updatedUser = try? result.get()
             updatedUser.map {
                 var user = $0
                 user.avatar = (self?.user?.fetchedValue?.avatar)!
@@ -128,6 +129,8 @@ extension EditProfileViewController: BioInputCellDelegate {
         })
     }
 }
+
+// MARK: UsersCoordinatorDelegate
 
 extension EditProfileViewController: UsersCoordinatorDelegate {
     func coordinatorDidPick(image: UIImage) {

@@ -26,7 +26,10 @@ extension ImageRequest: NetworkRequest {
         return URLRequest(url: url)
     }
     
-    func deserialize(_ data: Data?, response: URLResponse?) -> UIImage? {
-        return data.flatMap(UIImage.init(data:))
+    func deserialize(_ data: Data?, response: HTTPURLResponse) throws -> UIImage {
+        guard let data = data, let image = UIImage(data: data) else {
+            throw NetworkError.unrecoverable
+        }
+        return image
     }
 }

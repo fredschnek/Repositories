@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ID<T> {
+struct ID<T>: Equatable {
     let value: Int
 }
 
@@ -32,6 +32,10 @@ struct FetchableValue<T> {
             return value
         }
         return nil
+    }
+    
+    mutating func update(newValue: T) {
+        value = .fetched(value: newValue)
     }
 }
 
