@@ -18,7 +18,6 @@ class EditProfileTableViewDataSourceTests: XCTestCase {
     func testFields() {
         let user: User = openJsonFile(withName: "User")!
         let organizer = EditProfileTableViewDataSource.DataOrganizer(user: user)
-        XCTAssert(organizer.row(at: 0).isValueEqual(to: #imageLiteral(resourceName: "avatar")))
         XCTAssert(organizer.row(at: 1).isValueEqual(to: "monalisa octocat"))
         XCTAssert(organizer.row(at: 2).isValueEqual(to: "https://github.com/blog"))
         XCTAssert(organizer.row(at: 3).isValueEqual(to: "GitHub"))

@@ -5,13 +5,14 @@
 //  Created by Frederico Schnekenberg on 19/09/22.
 //
 
+import UIKit
 import Foundation
 
 extension User {
     subscript(row: EditProfileViewController.Row) -> EditProfileViewController.Row {
         let details = self.details.fetchedValue
         switch row {
-        case .avatar: return .avatar(#imageLiteral(resourceName: "avatar"))
+        case .avatar: return .avatar(avatar.fetchedValue ?? UIImage())
         case .name: return .name(details?.name ?? "")
         case .blog: return .blog(details?.blog?.absoluteString ?? "")
         case .company: return .company(details?.company ?? "")

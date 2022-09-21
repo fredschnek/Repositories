@@ -64,6 +64,8 @@ class ListRequest<ModelType: Decodable & ArrayType>: APIRequest, JSONDataRequest
     }
 }
 
+// MARK: NetworkRequest
+
 extension ListRequest: NetworkRequest {
     var urlRequest: URLRequest {
         var request = authenticatedURLRequest
@@ -107,7 +109,7 @@ extension UpdateRequest: NetworkRequest {
 
 // MARK: - StatusRequest
 
-class StatusRequest: APIRequest, HTTPStatusCodeRequest {
+class StatusRequest: APIRequest, HTTPStatusRequest {
     let url: URL
     let accessToken: String
     let session: URLSession
@@ -129,7 +131,7 @@ extension StatusRequest: NetworkRequest {
 
 // MARK: - CheckRequest
 
-class ToggleRequest: APIRequest, HTTPStatusCodeRequest {
+class ToggleRequest: APIRequest, HTTPStatusRequest {
     let url: URL
     let accessToken: String
     let session: URLSession
@@ -151,4 +153,3 @@ extension ToggleRequest: NetworkRequest {
         return request
     }
 }
-

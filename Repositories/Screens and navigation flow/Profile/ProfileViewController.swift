@@ -7,15 +7,51 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, Stateful, MainCoordinated, UsersCoordinated {
-    @IBOutlet private weak var tableView: UITableView!
+class ProfileViewController: UIViewController, MainCoordinated, UsersCoordinated, Networked {
+    @IBOutlet private weak var editButton: UIBarButtonItem!
     private var dataSource: ProfileTableViewDataSource?
-    var stateController: StateController?
     
+    var networkController: NetworkController?
     weak var mainCoordinator: MainFlowCoordinator?
     weak var usersCoordinator: UsersFlowCoordinator?
     
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            let refreshControl = UIRefreshControl()
+            refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+            tableView.refreshControl = refreshControl
+        }
+    }
+    
+    var user: FetchableValue<User>? {
+        didSet {
+            if oldValue == nil { refresh() }
+        }
+    }
+    
+    @objc func refresh() {
+        guard let url = user?.url else {
+            return
+        }
+        networkController?.fetchValue(for: url) { [weak self] user in
+            user.map { self?.update(user: $0) }
+        }
+    }
+    
     @IBAction func cancel(_ segue: UIStoryboardSegue) {}
+    
+    @IBAction func dismissAfterSave(_ segue: UIStoryboardSegue) {
+        guard let user = segue.readUser()?.fetchedValue else {
+            return
+        }
+        setUpDataSource(with: user)
+    }
+    
+    @IBAction func logOut(_ sender: Any) {
+        user = nil
+        networkController?.logOut()
+        mainCoordinator?.logOut()
+    }
 }
 
 // MARK: UIViewController
@@ -23,18 +59,13 @@ class ProfileViewController: UIViewController, Stateful, MainCoordinated, UsersC
 extension ProfileViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let user = stateController?.user else {
-            return
-        }
-        let dataSource = ProfileTableViewDataSource(user: user)
-        self.dataSource = dataSource
-        tableView.dataSource = dataSource
-        tableView.delegate = self
-        tableView.reloadData()
+        editButton.isEnabled = false
+        tableView.refreshControl?.beginRefreshing()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         mainCoordinator?.configure(viewController: segue.destination)
+        segue.forward(user: user)
     }
 }
 
@@ -53,7 +84,7 @@ extension ProfileViewController: UITableViewDelegate {
         dataSource.map { dataSource in
             let row = dataSource.row(at: indexPath)
             (row as? Section.DetailRow).map { row in
-                let details = stateController?.user?.details.fetchedValue
+                let details = user?.fetchedValue?.details.fetchedValue
                 switch row {
                 case .email: details?.email.map { usersCoordinator?.profileViewController(self, didSelectEmail: $0) }
                 case .blog: details?.blog.map { mainCoordinator?.viewController(self, didSelectURL: $0) }
@@ -67,6 +98,37 @@ extension ProfileViewController: UITableViewDelegate {
                 }
             }
         }
+    }
+}
+
+// MARK: Private
+
+private extension ProfileViewController {
+    func setUpDataSource(with user: User) {
+        let dataSource = ProfileTableViewDataSource(user: user)
+        self.dataSource = dataSource
+        tableView.dataSource = dataSource
+        tableView.delegate = self
+        tableView.reloadData()
+    }
+    
+    func update(user: User) {
+        tableView?.refreshControl?.endRefreshing()
+        self.user?.value = .fetched(value: user)
+        setUpDataSource(with: user)
+        editButton.isEnabled = true
+        networkController?.fetchImage(for: user.avatar.url) { [weak self] avatar in
+            avatar.map { self?.update(avatar:$0) }
+        }
+    }
+    
+    func update(avatar: UIImage) {
+        guard var user = user?.fetchedValue else {
+            return
+        }
+        user.avatar.value = .fetched(value: avatar)
+        self.user?.value = .fetched(value: user)
+        setUpDataSource(with: user)
     }
 }
 

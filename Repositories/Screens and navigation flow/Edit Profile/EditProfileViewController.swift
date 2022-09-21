@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController, Stateful, UsersCoordinated {
+class EditProfileViewController: UIViewController, UsersCoordinated, Networked {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var saveButton: UIBarButtonItem!
     @IBOutlet private var scrollingController: TableViewScrollingController!
@@ -15,14 +15,30 @@ class EditProfileViewController: UIViewController, Stateful, UsersCoordinated {
     private var dataSource: EditProfileTableViewDataSource?
     private var keyboardObservers: [NSObjectProtocol] = []
     
-    var stateController: StateController?
     weak var usersCoordinator: UsersFlowCoordinator?
+    var networkController: NetworkController?
+    
+    var user: FetchableValue<User>?
     
     var avatar: UIImage? {
         didSet {
             avatar.map { dataSource?.set(avatar:$0) }
             tableView.reloadData()
         }
+    }
+    
+    @IBAction func save(_ sender: Any) {
+        guard let dataSource = dataSource else {
+            return
+        }
+        networkController?.submit(value: dataSource.userUpdate, toURL: GitHubEndpoint.updateUserURL, withCompletion: { [weak self] (updatedUser: User?) in
+            updatedUser.map {
+                var user = $0
+                user.avatar = (self?.user?.fetchedValue?.avatar)!
+                self?.user?.value = .fetched(value: user)
+            }
+            self?.usersCoordinator?.editProfileViewControllerDidSaveUser(self!)
+        })
     }
 }
 
@@ -32,7 +48,7 @@ extension EditProfileViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForKeyboardNotifications()
-        guard let user = stateController?.user else {
+        guard let user = user?.fetchedValue else {
             return
         }
         let dataSource = EditProfileTableViewDataSource(user: user)

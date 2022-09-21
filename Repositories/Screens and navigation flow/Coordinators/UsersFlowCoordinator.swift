@@ -38,6 +38,10 @@ class UsersFlowCoordinator: NSObject {
         imagePickerController.delegate = self
         viewController.present(imagePickerController, animated: true, completion: nil)
     }
+    
+    func editProfileViewControllerDidSaveUser(_ viewController: EditProfileViewController) {
+        viewController.performSegue(withIdentifier: EditProfileViewControllerSegues.dismissAfterSave, sender: nil)
+    }
 }
 
 // MARK: Coordinator
@@ -66,5 +70,8 @@ extension UsersFlowCoordinator {
         static let showUsers = "ShowUsers"
         static let showRepositories = "ShowRepositories"
     }
+    
+    struct EditProfileViewControllerSegues {
+        static let dismissAfterSave = "DismissAfterSave"
+    }
 }
-

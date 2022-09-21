@@ -14,6 +14,10 @@ class EditProfileTableViewDataSource: NSObject {
         return organizer.isDataValid
     }
     
+    var userUpdate: UserUpdate {
+        return organizer.userUpdate
+    }
+    
     init(user: User) {
         organizer = DataOrganizer(user: user)
     }
@@ -66,8 +70,23 @@ extension EditProfileTableViewDataSource {
             return true
         }
         
+        var userUpdate: UserUpdate {
+            var update = UserUpdate()
+            for row in rows {
+                switch row {
+                case .name(let value): update.name = value
+                case .blog(let value): update.blog = value
+                case .company(let value): update.company = value
+                case .location(let value): update.location = value
+                case .bio(let value): update.bio = value
+                default: continue
+                }
+            }
+            return update
+        }
+        
         init(user: User) {
-            let rows: [EditProfileViewController.Row] = [ .avatar(UIImage()), .name(""), .blog(""), .company(""), .location(""), .bio("")]
+            let rows: [EditProfileViewController.Row] = [.avatar(UIImage()), .name(""), .blog(""), .company(""), .location(""), .bio("")]
             self.rows = rows.map { user[$0] }
         }
         

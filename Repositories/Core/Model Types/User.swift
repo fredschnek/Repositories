@@ -102,3 +102,12 @@ extension User.Details {
     
 }
 
+// MARK: - UserUpdate
+
+struct UserUpdate: Encodable {
+    var name: String?
+    var blog: String?
+    var company: String?
+    var location: String?
+    var bio: String?
+}

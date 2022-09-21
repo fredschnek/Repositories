@@ -41,11 +41,11 @@ extension JSONDataRequest {
     }
 }
 
-// MARK: - HTTPStatusCodeRequest
+// MARK: - HTTPStatusRequest
 
-protocol HTTPStatusCodeRequest: NetworkRequest {}
+protocol HTTPStatusRequest: NetworkRequest {}
 
-extension HTTPStatusCodeRequest {
+extension HTTPStatusRequest {
     func deserialize(_ data: Data?, response: URLResponse?) -> Bool? {
         guard let response = response as? HTTPURLResponse else {
             return nil

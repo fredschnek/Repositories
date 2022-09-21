@@ -89,7 +89,7 @@ protocol UserConfigurable {
 
 extension AvatarCell: UserConfigurable {
     func configureWith(user: User, row: RowType) {
-        avatar = #imageLiteral(resourceName: "avatar")
+        avatar = user.avatar.fetchedValue ?? UIImage()
     }
 }
 

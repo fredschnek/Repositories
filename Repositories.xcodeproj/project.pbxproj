@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F11AAFE28DB555C0013AC41 /* KeychainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11AAFD28DB555C0013AC41 /* KeychainController.swift */; };
+		7F11AB0028DB57C70013AC41 /* LoginFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11AAFF28DB57C70013AC41 /* LoginFlowCoordinator.swift */; };
+		7F11AB0228DB58890013AC41 /* UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11AB0128DB58890013AC41 /* UIStoryboardSegue.swift */; };
+		7F11AB0528DB5A480013AC41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11AB0428DB5A480013AC41 /* LoginViewController.swift */; };
+		7F11AB0728DB5B500013AC41 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11AB0628DB5B500013AC41 /* MainTabBarController.swift */; };
+		7F11AB0928DB5DE80013AC41 /* GitHubRootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11AB0828DB5DE80013AC41 /* GitHubRootTests.swift */; };
+		7F11AB0B28DB5E050013AC41 /* Root.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F11AB0A28DB5E050013AC41 /* Root.json */; };
 		7F126C7928D6370C00FF8302 /* CachingControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F126C7828D6370C00FF8302 /* CachingControllerTests.swift */; };
 		7F126C7D28D63AFF00FF8302 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F126C7C28D63AFF00FF8302 /* NetworkController.swift */; };
 		7F126C8228D6BF2B00FF8302 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F126C8128D6BF2B00FF8302 /* Loader.swift */; };
@@ -110,6 +117,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F11AAFD28DB555C0013AC41 /* KeychainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainController.swift; sourceTree = "<group>"; };
+		7F11AAFF28DB57C70013AC41 /* LoginFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowCoordinator.swift; sourceTree = "<group>"; };
+		7F11AB0128DB58890013AC41 /* UIStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegue.swift; sourceTree = "<group>"; };
+		7F11AB0428DB5A480013AC41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7F11AB0628DB5B500013AC41 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		7F11AB0828DB5DE80013AC41 /* GitHubRootTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRootTests.swift; sourceTree = "<group>"; };
+		7F11AB0A28DB5E050013AC41 /* Root.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Root.json; sourceTree = "<group>"; };
 		7F126C7828D6370C00FF8302 /* CachingControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingControllerTests.swift; sourceTree = "<group>"; };
 		7F126C7C28D63AFF00FF8302 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		7F126C8128D6BF2B00FF8302 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
@@ -224,10 +238,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F11AB0328DB5A370013AC41 /* Log In */ = {
+			isa = PBXGroup;
+			children = (
+				7F11AB0428DB5A480013AC41 /* LoginViewController.swift */,
+			);
+			path = "Log In";
+			sourceTree = "<group>";
+		};
 		7F126C7E28D63B1F00FF8302 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				7F32E7AE28D9DFAE004BA680 /* StateController.swift */,
+				7F11AAFD28DB555C0013AC41 /* KeychainController.swift */,
 				7F32E7B028D9E125004BA680 /* Networking */,
 				7F9AB99428D4B451002EE4A8 /* Caching */,
 				7F9AB99528D4B459002EE4A8 /* Model Types */,
@@ -239,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				7F126C8128D6BF2B00FF8302 /* Loader.swift */,
+				7F11AB0328DB5A370013AC41 /* Log In */,
 				7F32E7A928D9DE0C004BA680 /* Coordinators */,
 				7F126C8328D6BF3300FF8302 /* Users */,
 				7FB0C66628D95BAF001DA765 /* Profile */,
@@ -246,6 +270,7 @@
 				7FB0C66728D95BB8001DA765 /* Repository */,
 				7F126C8A28D6BFF700FF8302 /* Repositories */,
 				7F126C9128D6C07900FF8302 /* Dummy data */,
+				7F11AB0628DB5B500013AC41 /* MainTabBarController.swift */,
 			);
 			path = "Screens and navigation flow";
 			sourceTree = "<group>";
@@ -302,6 +327,8 @@
 			children = (
 				7F32E7AA28D9DE47004BA680 /* MainFlowCoordinator.swift */,
 				7F32E7AC28D9DE51004BA680 /* UsersFlowCoordinator.swift */,
+				7F11AAFF28DB57C70013AC41 /* LoginFlowCoordinator.swift */,
+				7F11AB0128DB58890013AC41 /* UIStoryboardSegue.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -377,6 +404,7 @@
 				7FB0C68A28D95FB0001DA765 /* RepositoryTableViewDataSourceTests.swift */,
 				7FB0C69D28D96369001DA765 /* EditProfileTableViewDataSourceTests.swift */,
 				7F9AB99728D4B4C2002EE4A8 /* Model Types */,
+				7F11AB0A28DB5E050013AC41 /* Root.json */,
 				7F4519AB28D4B0BD00EF437C /* User.json */,
 				7F126CAE28D6C54800FF8302 /* Users.json */,
 				7F4519AD28D4B0E600EF437C /* PartialUser.json */,
@@ -413,6 +441,7 @@
 				7F4519A128D4AFD600EF437C /* FetchableValueTests.swift */,
 				7F4519A528D4B00E00EF437C /* UserTests.swift */,
 				7F4519A728D4B02A00EF437C /* RepositoryTests.swift */,
+				7F11AB0828DB5DE80013AC41 /* GitHubRootTests.swift */,
 			);
 			path = "Model Types";
 			sourceTree = "<group>";
@@ -583,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F126CAF28D6C54800FF8302 /* Users.json in Resources */,
+				7F11AB0B28DB5E050013AC41 /* Root.json in Resources */,
 				7F4519AE28D4B0E600EF437C /* PartialUser.json in Resources */,
 				7F4519B028D4B0FC00EF437C /* Repository.json in Resources */,
 				7F4519AC28D4B0BD00EF437C /* User.json in Resources */,
@@ -606,6 +636,7 @@
 			files = (
 				7FB0C69628D962B9001DA765 /* EditProfileTableViewDataSource.swift in Sources */,
 				7FB0C67F28D95D3A001DA765 /* CountersCell.swift in Sources */,
+				7F11AB0728DB5B500013AC41 /* MainTabBarController.swift in Sources */,
 				7FB0C67D28D95D2D001DA765 /* ReadmeCell.swift in Sources */,
 				7F32E7B228D9E13E004BA680 /* GitHubEndpoint.swift in Sources */,
 				7FB0C68128D95D43001DA765 /* DescriptionCell.swift in Sources */,
@@ -615,6 +646,7 @@
 				7FB0C68528D95D60001DA765 /* RepositoryViewController.swift in Sources */,
 				7F126C8E28D6C03700FF8302 /* RepositoriesViewController.swift in Sources */,
 				7FB0C66F28D95C1C001DA765 /* SummaryCell.swift in Sources */,
+				7F11AAFE28DB555C0013AC41 /* KeychainController.swift in Sources */,
 				7FB0C69828D962C7001DA765 /* EditProfileViewController.swift in Sources */,
 				7FB0C66B28D95C0C001DA765 /* DetailCell.swift in Sources */,
 				7F126C8C28D6C02000FF8302 /* RepositoryCell.swift in Sources */,
@@ -626,6 +658,7 @@
 				7FB0C67B28D95D24001DA765 /* ParentCell.swift in Sources */,
 				7F126CA328D6C17B00FF8302 /* UITabBar+Extension.swift in Sources */,
 				7F126C9028D6C05700FF8302 /* RepositoriesTableViewDataSource.swift in Sources */,
+				7F11AB0528DB5A480013AC41 /* LoginViewController.swift in Sources */,
 				7F45199A28D4AC9D00EF437C /* User.swift in Sources */,
 				7FB0C69028D9628D001DA765 /* AvatarInputCell.swift in Sources */,
 				7F126C8228D6BF2B00FF8302 /* Loader.swift in Sources */,
@@ -648,10 +681,12 @@
 				7F9AB99928D4B4EA002EE4A8 /* CachingController.swift in Sources */,
 				7F9AB99B28D4B515002EE4A8 /* FileSystemCacheController.swift in Sources */,
 				7F126C8528D6BF6000FF8302 /* UserCell.swift in Sources */,
+				7F11AB0028DB57C70013AC41 /* LoginFlowCoordinator.swift in Sources */,
 				7FB0C66128D95AFE001DA765 /* UITableViewCell+Extension.swift in Sources */,
 				7F126C9F28D6C17B00FF8302 /* Date+Extension.swift in Sources */,
 				7F126C9E28D6C17B00FF8302 /* UIView+Extension.swift in Sources */,
 				7FB0C66D28D95C12001DA765 /* ListCell.swift in Sources */,
+				7F11AB0228DB58890013AC41 /* UIStoryboardSegue.swift in Sources */,
 				7FB0C68728D95D75001DA765 /* RepositoryTableViewDataSource.swift in Sources */,
 				7F32E7AD28D9DE51004BA680 /* UsersFlowCoordinator.swift in Sources */,
 				7F126C7D28D63AFF00FF8302 /* NetworkController.swift in Sources */,
@@ -666,6 +701,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F11AB0928DB5DE80013AC41 /* GitHubRootTests.swift in Sources */,
 				7F4519A628D4B00E00EF437C /* UserTests.swift in Sources */,
 				7F4519A228D4AFD600EF437C /* FetchableValueTests.swift in Sources */,
 				7FB0C68928D95F9F001DA765 /* ProfileTableViewDataSourceTests.swift in Sources */,
