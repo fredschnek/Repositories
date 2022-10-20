@@ -38,6 +38,7 @@
 		7F126CAD28D6C3A600FF8302 /* ArrayTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F126CA828D6C3A600FF8302 /* ArrayTableViewDataSourceTests.swift */; };
 		7F126CAF28D6C54800FF8302 /* Users.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F126CAE28D6C54800FF8302 /* Users.json */; };
 		7F126CB128D6C55700FF8302 /* Repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F126CB028D6C55700FF8302 /* Repositories.json */; };
+		7F31A4A6290180F0007BFC4D /* MainTabBarControllerTransducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F31A4A5290180F0007BFC4D /* MainTabBarControllerTransducer.swift */; };
 		7F32E7A628D9DD78004BA680 /* Repositories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F32E7A528D9DD78004BA680 /* Repositories.storyboard */; };
 		7F32E7A828D9DD90004BA680 /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F32E7A728D9DD90004BA680 /* Users.storyboard */; };
 		7F32E7AB28D9DE47004BA680 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32E7AA28D9DE47004BA680 /* MainFlowCoordinator.swift */; };
@@ -151,6 +152,7 @@
 		7F126CA828D6C3A600FF8302 /* ArrayTableViewDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTableViewDataSourceTests.swift; sourceTree = "<group>"; };
 		7F126CAE28D6C54800FF8302 /* Users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Users.json; sourceTree = "<group>"; };
 		7F126CB028D6C55700FF8302 /* Repositories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Repositories.json; sourceTree = "<group>"; };
+		7F31A4A5290180F0007BFC4D /* MainTabBarControllerTransducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerTransducer.swift; sourceTree = "<group>"; };
 		7F32E7A528D9DD78004BA680 /* Repositories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repositories.storyboard; sourceTree = "<group>"; };
 		7F32E7A728D9DD90004BA680 /* Users.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
 		7F32E7AA28D9DE47004BA680 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				7F126C8A28D6BFF700FF8302 /* Repositories */,
 				7F126C9128D6C07900FF8302 /* Dummy data */,
 				7F11AB0628DB5B500013AC41 /* MainTabBarController.swift */,
+				7F31A4A5290180F0007BFC4D /* MainTabBarControllerTransducer.swift */,
 			);
 			path = "Screens and navigation flow";
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				7F126C8928D6BFDC00FF8302 /* UsersTableViewDataSource.swift in Sources */,
 				7F9AB99928D4B4EA002EE4A8 /* CachingController.swift in Sources */,
 				7F9AB99B28D4B515002EE4A8 /* FileSystemCacheController.swift in Sources */,
+				7F31A4A6290180F0007BFC4D /* MainTabBarControllerTransducer.swift in Sources */,
 				7F126C8528D6BF6000FF8302 /* UserCell.swift in Sources */,
 				7F11AB0028DB57C70013AC41 /* LoginFlowCoordinator.swift in Sources */,
 				7FB0C66128D95AFE001DA765 /* UITableViewCell+Extension.swift in Sources */,
