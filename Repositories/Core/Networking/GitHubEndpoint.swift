@@ -17,8 +17,10 @@ struct GitHubEndpoint {
         static let scope = "scope"
     }
     
+    // TODO: - Add your own client ID and secret here
     static let clientID = "1234567890"
     static let clientSecret = "abcdefghijklmnopqrstuvwxyz"
+    // ---------------------------------------------------
     static let scope = "user"
     static let authorizationCallbackURLScheme = "repositories://oauth"
     static let accessTokenURL = URL(string: "https://github.com/login/oauth/access_token")!
