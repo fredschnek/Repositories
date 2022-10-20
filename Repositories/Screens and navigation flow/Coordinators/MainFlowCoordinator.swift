@@ -73,10 +73,10 @@ class MainFlowCoordinator: NSObject {
         loginFlowCoordinator.mainViewControllerRequiresAuthentication(mainTabBarController, isAppLaunch: false)
     }
     
-    func showAlert(for error: NetworkError, withCompletion completion: @escaping () -> Void) {
+    func showAlert(for error: NetworkError, withActionTitle title: String = "OK", completion: @escaping () -> Void = {}) {
         assert(error != .unauthorized)
         let alertController = UIAlertController(title: error.errorDescription, message: error.failureReason, preferredStyle: .alert)
-        let dismissAction = UIAlertAction(title: "OK", style: .default, handler: { _ in completion() })
+        let dismissAction = UIAlertAction(title: title, style: .default, handler: { _ in completion() })
         alertController.addAction(dismissAction)
         mainTabBarController.show(alertController, sender: nil)
     }
